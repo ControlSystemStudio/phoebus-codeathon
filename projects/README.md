@@ -12,7 +12,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | **Alarm Services** |||||
 | [ALARM-KAFKA-001](#alarm-kafka-001-enhanced-kafka-streams-error-handling) | Enhanced Kafka Streams Error Handling | Advanced | | Not Started |
 | [ALARM-KAFKA-002](#alarm-kafka-002-resilient-topic-handling-with-retry-logic) | Resilient Topic Handling with Retry Logic | Intermediate | | Not Started |
-| [ALARM-REST-001](#alarm-rest-001-alarm-configuration-rest-api) | Alarm Configuration REST API | Intermediate | | Not Started |
+| [ALARM-REST-001](#alarm-rest-001-alarm-configuration-rest-api) | Alarm Configuration REST API | Intermediate | Anthony Carriveau | Started |
 | [ALARM-UI-001](#alarm-ui-001-display-highlow-alarm-limits-in-alarm-tree-tooltip) | Display High/Low Alarm Limits in Alarm Tree Tooltip | Intermediate | | Not Started |
 | [ALARM-UI-002](#alarm-ui-002-improve-alarm-log-table-searchquery-ui) | Improve Alarm Log Table Search/Query UI | Intermediate | | Not Started |
 | [ALARM-TOPICS-001](#alarm-topics-001-centralized-kafka-topic-management-service) | Centralized Kafka Topic Management Service | Intermediate | | Not Started |
@@ -126,7 +126,7 @@ Create a REST API for the alarm configuration service that exposes read-only acc
 - Add OpenAPI/Swagger documentation
 - Implement proper HTTP status codes (404 for missing nodes)
 
-**Assigned To:** _Available_
+**Assigned To:** _Anthony Carriveau_
 
 ---
 
