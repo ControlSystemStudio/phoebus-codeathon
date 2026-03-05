@@ -180,20 +180,24 @@ Phoebus.org serves as the main landing page for the Phoebus ecosystem but has ou
   - Audit all external links (GitHub repos, documentation sites, downloads) :white_check_mark:
   - Update broken or outdated links :white_check_mark:
   - Ensure links point to correct ReadTheDocs documentation :white_check_mark:
-  - Add links to all ecosystem services (Alarm Services, Archiver Appliance, ChannelFinder, Olog, Save & Restore) :question: (Might need to be updated after the Documentation was updated. Currently all links work as intended.)
   - Fix links to community resources (Matrix chat, ~~mailing lists~~, GitHub Discussions) :white_check_mark:
-- [ ] **Add Missing Information**:
-  - Complete service descriptions for all middleware services
-  - Add "Getting Started" quickstart guide
-  - Include architecture overview diagram showing how services interact
-  - List key features and capabilities
-- [ ] **Expand Collaboration Section**:
-  - Highlight community contribution opportunities
-  - Add "How to Contribute" section with clear paths for different skill levels
-  - Showcase community contributors and facilities using Phoebus
-  - Add community calendar (codeathons, meetings, webinars)
-  - Link to CONTRIBUTING.md in main repository
-  - Include community communication channels (Matrix, GitHub, mailing lists)
+  - Add links to all ecosystem services (Alarm Services, Archiver Appliance, ChannelFinder, Olog, Save & Restore) :question: (Maybe has to be updated after the Documentation was updated. Currently all links work as intended.)
+- [x] **Add Missing Information**:
+  - Services - Complete service descriptions for all middleware services, proofread :white_check_mark:
+  - About - Extend information at the top, then proofread :white_check_mark:
+  - Applications - proofread :white_check_mark:
+  - Download - Add "Getting Started" quickstart guide, under the Download section, add some useful links :white_check_mark:
+  - Include architecture overview diagram showing how services interact :question:
+  - List key features and capabilities :question:
+- [x] **Expand Collaboration Section**:
+  - Highlight community contribution opportunities :white_check_mark:
+  - Include community communication channels (Matrix, GitHub, mailing lists) :white_check_mark:
+  - ~~Add community calendar (codeathons, meetings, webinars)~~ Add a list of upcoming events instead :white_check_mark:
+  - Contribute overhaul :white_check_mark:
+  - ~~Showcase~~ Add missing community contributors and facilities using Phoebus :white_check_mark:
+  - Create and Link to CONTRIBUTING.md in main repository :white_check_mark:
+    https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors
+  - ~~Add "How to Contribute" section with clear paths for different skill levels~~ not needed, makes it less complicated
 - [ ] **Technical Updates**:
   - Update site generator dependencies and Improve build process and deployment
   - Add analytics to understand user engagement
@@ -202,9 +206,7 @@ Phoebus.org serves as the main landing page for the Phoebus ecosystem but has ou
 - Current site: https://phoebus.org (or phoebus-doc.readthedocs.io)
 - Discussion topic: [4.4 Documentation Strategy](discussion-topics/README.md#44-documentation-strategy)
 
-**Assigned To:** Anna Ziegler (HZB)  
-**Status:** 70% Complete  
-**Notes:** Updated all Links and References, Added Missing Information, Proofread and improved all Texts, Added "Quickstart Guide" in Download section, Added upcoming Events section, Contribute overhaul. See https://github.com/ControlSystemStudio/phoebus-codeathon/tree/master/documentation-tasks
+**Assigned To:**
 
 ---
 
