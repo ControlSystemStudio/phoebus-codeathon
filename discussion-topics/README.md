@@ -1,5 +1,5 @@
 # Core Developers Discussion Topics
-## Monday, February 23rd, 2026
+## Monday, October 19th, 2026
 
 This document outlines the technical discussion topics for the Phoebus Tools and Services core developers session.
 

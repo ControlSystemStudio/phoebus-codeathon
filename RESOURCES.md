@@ -68,8 +68,9 @@ Quick links and resources for the Phoebus Tools and Services session.
 ## Communication Channels
 
 ### Codeathon Specific
-- **Matrix Chat:** [#codeathon26:epics-controls.org](https://matrix.to/#/#codeathon26:epics-controls.org)
-- **Event Wiki:** https://github.com/epics-base/epics-base/wiki/2026-EPICS-Codeathon-and-Documentathon-hosted-by-Diamond
+- **Matrix Chat:** [#codeathon-oct26:epics-controls.org](https://matrix.to/#/#codeathon-oct26:epics-controls.org)
+- **Event Website / Registration:** https://www.bnl.gov/epics-codeathon/
+- **Event Wiki:** https://github.com/epics-base/epics-base/wiki/2026-EPICS-Developers-Meeting-and-Codeathon-hosted-by-EIC
 
 ### EPICS Community
 - **EPICS Chat:** https://epics-controls.org/epics-chat/
@@ -80,9 +81,9 @@ Quick links and resources for the Phoebus Tools and Services session.
 ## Technology Stack Reference
 
 ### Java / JavaFX
-- **Java SE Documentation:** https://docs.oracle.com/en/java/javase/17/
+- **Java SE Documentation:** https://docs.oracle.com/en/java/javase/25/
 - **JavaFX:** https://openjfx.io/
-  - JavaFX Documentation: https://openjfx.io/javadoc/17/
+  - JavaFX Documentation: https://openjfx.io/javadoc/25/
   - JavaFX Tutorial: https://openjfx.io/openjfx-docs/
 - **Java Concurrency:** https://docs.oracle.com/javase/tutorial/essential/concurrency/
 

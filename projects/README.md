@@ -1,7 +1,7 @@
 # Development Projects
-## 2026 EPICS Codeathon - Phoebus Track
+## 2026 EPICS Developers Meeting and Codeathon - Phoebus Track
 
-This directory contains the list of development projects for the Phoebus tools and services during the codeathon week.
+This directory contains the list of development projects for the Phoebus tools and services during the event week.
 
 ---
 
@@ -898,5 +898,5 @@ Create a training VM for Phoebus services and tools that complements the existin
 ## Getting Help
 
 - Ask in the main room during work hours
-- Use the Matrix chat: [#codeathon26:epics-controls.org](https://matrix.to/#/#codeathon26:epics-controls.org)
+- Use the Matrix chat: [#codeathon-oct26:epics-controls.org](https://matrix.to/#/#codeathon-oct26:epics-controls.org)
 - Tag mentors: @Kunal Shroff, @Georg Weiss, @Sky Brewer

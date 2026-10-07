@@ -1,5 +1,5 @@
 # Documentathon Tasks
-## 2026 EPICS Codeathon - Phoebus Documentation Track
+## 2026 EPICS Developers Meeting and Codeathon - Phoebus Documentation Track
 
 Documentation is a critical part of making Phoebus tools and services accessible to users and developers. This track focuses on improving, creating, and organizing documentation.
 
