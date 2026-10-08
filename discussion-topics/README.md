@@ -1,7 +1,11 @@
-# Core Developers Discussion Topics
+﻿# Core Developers Discussion Topics
 ## Monday, October 19th, 2026
 
 This document outlines the technical discussion topics for the Phoebus Tools and Services core developers session.
+
+---
+
+Completed topics from earlier events are in the [archive](../archive/README.md).
 
 ---
 
@@ -26,12 +30,10 @@ This document outlines the technical discussion topics for the Phoebus Tools and
   - macOS and Debian build/runtime issues ([#3042](https://github.com/ControlSystemStudio/phoebus/issues/3042), [#3003](https://github.com/ControlSystemStudio/phoebus/issues/3003), [#3691](https://github.com/ControlSystemStudio/phoebus/issues/3691))
 - [ ] Launcher and startup contract
   - Formalize launcher behavior so facility-specific startups are not broken by changes ([#3828](https://github.com/ControlSystemStudio/phoebus/issues/3828) `-clean` with `-app`/`-resource`)
-  - [x] Standalone window mode: implemented in [PR #3859](https://github.com/ControlSystemStudio/phoebus/pull/3859) (merged 2026-07-09, [#3543](https://github.com/ControlSystemStudio/phoebus/issues/3543))
   - [ ] Window positioning from BOB x/y properties ([#3871](https://github.com/ControlSystemStudio/phoebus/issues/3871))
   - Deployment-only / multi-user product ([#3515](https://github.com/ControlSystemStudio/phoebus/issues/3515), [#410](https://github.com/ControlSystemStudio/phoebus/issues/410))
 
 #### 1.2 UI/UX Framework Modernization
-- [x] JavaFX version strategy and roadmap
 - [ ] CSS styling and theming improvements
 - [ ] Responsive design patterns for different screen sizes
 - [ ] Dark mode and accessibility enhancements
@@ -48,10 +50,6 @@ This document outlines the technical discussion topics for the Phoebus Tools and
 - [ ] CI/CD pipeline improvements
 
 #### 1.4 Java Platform Modernization
-- [x] **JDK 25 Upgrade and Dependency Refresh**
-  - The Phoebus upgrade work to JDK 25, Spring Boot, and related dependency refresh was completed in the recent upgrade cycle.
-  - Follow-up focus: stabilization, test coverage, and release sequencing rather than repeating the full migration effort.
-  - See: [2026 Codeathon Project Results](https://github.com/epics-base/epics-base/wiki/2026-Codeathon-Project-Results)
 - [ ] **JDK 21 / 25 Follow-up and Stabilization**
   - Review edge cases and production regressions after the major dependency refresh
   - Confirm JavaFX compatibility, performance, and threading assumptions after the upgrade
@@ -171,7 +169,6 @@ This document outlines the technical discussion topics for the Phoebus Tools and
 - [ ] Notification systems (email, SMS, messaging platforms)
   - Annunciator: until-acknowledged option, translations ([#3944](https://github.com/ControlSystemStudio/phoebus/issues/3944), [#3844](https://github.com/ControlSystemStudio/phoebus/issues/3844), [#2968](https://github.com/ControlSystemStudio/phoebus/issues/2968))
 - [ ] Alarm history and analytics
-  - [x] Logger deserialization of the "enabled" date field fixed in [PR #3330](https://github.com/ControlSystemStudio/phoebus/pull/3330) (merged 2025-03-20, [#3304](https://github.com/ControlSystemStudio/phoebus/issues/3304))
   - [ ] "Disable until" handling in the logger ([#3032](https://github.com/ControlSystemStudio/phoebus/issues/3032)); table usability ([#3943](https://github.com/ControlSystemStudio/phoebus/issues/3943))
 - [ ] Kafka operations
   - Run Kafka 4 without Zookeeper; update docs and configuration ([#3441](https://github.com/ControlSystemStudio/phoebus/issues/3441))
@@ -183,9 +180,7 @@ This document outlines the technical discussion topics for the Phoebus Tools and
 #### 2.7 Save & Restore
 - [ ] Access security implications of "restore from service" ([#3357](https://github.com/ControlSystemStudio/phoebus/issues/3357))
 - [ ] Credentials handling and embedded LDAP / hashed passwords ([#3045](https://github.com/ControlSystemStudio/phoebus/issues/3045), [#3378](https://github.com/ControlSystemStudio/phoebus/issues/3378))
-- [x] Tree table UI for richer metadata: [PR #3872](https://github.com/ControlSystemStudio/phoebus/pull/3872) (merged 2026-07-10)
 - [ ] Compare current values to stored snapshots
-- [x] Snapshot delete / unique IDs on update: [PR #3593](https://github.com/ControlSystemStudio/phoebus/pull/3593) (merged 2025-10-17, [#3587](https://github.com/ControlSystemStudio/phoebus/issues/3587))
 - [ ] Binary values in snapshots ([#2755](https://github.com/ControlSystemStudio/phoebus/issues/2755))
 
 #### 2.8 Service Health, Testing & Realtime Updates
@@ -253,10 +248,6 @@ This document outlines the technical discussion topics for the Phoebus Tools and
   - Reorganize docs by user type: Operator, Display Designer, Sysadmin, Contributor?
   - Consider [Diátaxis](https://diataxis.fr/) framework (Tutorials, Guides, References, Explanations)
   - Move CONTRIBUTING.md and ARCHITECTURE.md to repository root
-- [x] **Multi-version Documentation** ([#3556](https://github.com/ControlSystemStudio/phoebus/issues/3556), issue closed; proof of concept at https://phoebus-test.readthedocs.io)
-  - Build docs for all tagged releases on ReadTheDocs
-  - Default to `stable` (latest release) instead of `latest` (master)
-  - Enable version selector for older releases
 - [ ] **Documentation Standardization Across Repositories**
   - Consistent documentation structure across Phoebus, Olog, ChannelFinder, Archive Appliance, etc.
   - Standardize section organization (Getting Started, Installation, Configuration, API Reference, etc.)
@@ -344,3 +335,4 @@ Discussion on alarm services:
 - [Phoebus Documentation](https://github.com/ControlSystemStudio/phoebus/tree/master/docs)
 - [EPICS Website](https://epics-controls.org/)
 - [Previous Codeathon Reports](https://epics.anl.gov/meetings/)
+

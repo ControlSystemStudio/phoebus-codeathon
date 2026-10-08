@@ -41,7 +41,7 @@ Phoebus ecosystem mix user, developer, and admin documentation together, making 
 
 **Tasks:**
 - [ ] Audit current documentation and categorize content by target audience
-- [ ] Design documentation structure organized by user profile:
+- [x] Design documentation structure organized by user profile:
   - **Operator**: Using applications, viewing displays, interacting with services
   - **Display Designer**: Creating displays, widget properties, PV syntax, simulated PVs
   - **System Administrator**: Installation, deployment, configuration, maintenance, troubleshooting
