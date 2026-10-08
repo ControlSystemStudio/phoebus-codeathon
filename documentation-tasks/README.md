@@ -15,6 +15,10 @@ Documentation is a critical part of making Phoebus tools and services accessible
 6. Submit a pull request
 7. Coordinate with reviewers for technical accuracy
 
+**Relevant references from the 2026 Codeathon work:**
+- 2026 Codeathon Project Results: https://github.com/epics-base/epics-base/wiki/2026-Codeathon-Project-Results
+- Developer meeting notes and planning doc: https://docs.google.com/document/d/10oipk7mUnPIMryraRGQpPgFCsdGvfIuPCNlf4ueU-sc/edit?tab=t.0#heading=h.473y7nvoa581
+
 ---
 
 ## Documentation Structure Standardization
@@ -65,7 +69,7 @@ Phoebus ecosystem mix user, developer, and admin documentation together, making 
 **Status:** In Progress  
 **Notes:** Multiple initiatives in progress:
 - Olog documentation structure has been migrated and merged - see https://olog.readthedocs.io/en/latest/
-- Common user roles and documentation articles established - see https://docs.google.com/document/d/10oipk7mUnPIMryraRGQpPgFCsdGvfIuPCNlf4ueU-sc/edit
+- Common user roles and documentation articles established for the Phoebus ecosystem and service documentation
 - Sphinx template for Phoebus projects created - see https://github.com/ControlSystemStudio/phoebus-codeathon/tree/master/documentation-tasks/template
 - ChannelFinder documentation migration to new structure: 30% complete by Kacper Potoczny (ELI Beamlines), merging old documents into new structure
 - Olog User/operator documentation improvements in PR #257
