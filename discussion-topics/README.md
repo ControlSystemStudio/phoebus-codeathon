@@ -182,6 +182,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Credentials handling and embedded LDAP / hashed passwords ([#3045](https://github.com/ControlSystemStudio/phoebus/issues/3045), [#3378](https://github.com/ControlSystemStudio/phoebus/issues/3378))
 - [ ] Compare current values to stored snapshots
 - [ ] Binary values in snapshots ([#2755](https://github.com/ControlSystemStudio/phoebus/issues/2755))
+- [ ] Allow hide/reorder of columns in UI ([#3947](https://github.com/ControlSystemStudio/phoebus/issues/3947))
 
 #### 2.8 Service Health, Testing & Realtime Updates
 - [ ] Health endpoint reporting improvements (start with Alarm Logger)
