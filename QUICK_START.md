@@ -1,7 +1,7 @@
 # Quick Start Guide
-## Get Ready for the Phoebus Codeathon
+## Get Ready for the Phoebus Developers Meeting and Codeathon
 
-This guide will help you prepare for the Phoebus Tools and Services session at the 2026 EPICS Codeathon.
+This guide will help you prepare for the Phoebus Tools and Services session at the 2026 EPICS Developers Meeting and Codeathon.
 
 ---
 
@@ -10,7 +10,7 @@ This guide will help you prepare for the Phoebus Tools and Services session at t
 ### 1. Set Up Your Development Environment
 
 #### Install Java Development Kit (JDK)
-- **Required:** JDK 11 or later (JDK 17 LTS recommended)
+- **Required:** JDK 21 or later (JDK 25 recommended for current Phoebus upgrade work)
 - **Download:** https://adoptium.net/ (Eclipse Temurin)
 - **Verify installation:**
   ```bash
@@ -109,7 +109,7 @@ Think about which areas interest you most.
 
 ### 6. Join Communication Channels
 
-- **Matrix Chat:** Join [#codeathon26:epics-controls.org](https://matrix.to/#/#codeathon26:epics-controls.org)
+- **Matrix Chat:** Join [#codeathon-oct26:epics-controls.org](https://matrix.to/#/#codeathon-oct26:epics-controls.org)
 - **Install Matrix client:** Element (https://element.io/) or use web interface
 - Introduce yourself in the chat before the event!
 
@@ -132,8 +132,8 @@ If you're new to Phoebus:
 ### 8. Prepare Your Laptop
 
 - **Ensure your laptop is charged and you have a charger**
-- **UK Power:** Bring a UK plug adapter (BS1363 socket, 240V, 50Hz)
-- **WiFi:** Diamond prefers eduroam - check with your IT department
+- **US Power:** Bring a US plug adapter if needed (NEMA 5-15, 120V, 60Hz)
+- **WiFi:** Check event communications for Brookhaven guest Wi-Fi details before arrival
 - **Backup:** Commit any local work before traveling
 - **Free up disk space:** Need at least 10 GB free
 - **Update your OS and software**

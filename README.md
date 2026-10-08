@@ -1,17 +1,18 @@
 # Phoebus Tools and Services Session
-## 2026 EPICS Codeathon and Documentathon - Diamond Light Source
+## 2026 EPICS Developers Meeting and Codeathon - EIC at Brookhaven National Laboratory
 
 **Session co-ordinator:** Kunal Shroff (shroffk@bnl.gov)  
-**Dates:** February 23-27, 2026  
-**Pre-Codeathon Session:** Monday, February 23rd
+**Dates:** October 19-23, 2026  
+**Location:** Brookhaven National Laboratory (BNL), Upton, NY  
+**Event Website / Registration:** https://www.bnl.gov/epics-codeathon/
 
-**Meeting Minutes:** https://docs.google.com/document/d/10oipk7mUnPIMryraRGQpPgFCsdGvfIuPCNlf4ueU-sc/edit?usp=sharing
+**Meeting Minutes:** https://docs.google.com/document/d/13bLL-JE9knMuv3FnUysZkpgDQgCkbXEk7beRkDKO-go/edit?usp=sharing
 
 ---
 
 ## Overview
 
-This repository contains the planning materials, discussion topics, project tasks, and documentation initiatives for the Phoebus Tools and Services session at the 2026 EPICS Codeathon hosted by Diamond Light Source.
+This repository contains the planning materials, discussion topics, project tasks, and documentation initiatives for the Phoebus Tools and Services session at the 2026 EPICS Developers Meeting and Codeathon hosted by the Electron-Ion Collider (EIC) project at Brookhaven National Laboratory.
 
 ### Tech Stack
 
@@ -24,11 +25,11 @@ The Phoebus ecosystem consists of:
 
 ## Session Structure
 
-### 1. Core Developers Discussion Session (Monday-Friday:afternoons, Feb 23-27)
-Technical discussions on architecture, roadmap, and strategic decisions.  
+### 1. Core Developers Discussion Session
+Technical discussions on architecture, roadmap, and strategic decisions aligned with the developers meeting agenda.  
 See: [discussion-topics/](./discussion-topics/)
 
-### 2. Development Projects (Monday-Friday:all day, Feb 23-27)
+### 2. Development Projects
 Hands-on coding to address issues and implement new features.  
 See: [projects/](./projects/)
 
@@ -61,7 +62,7 @@ See: [documentation-tasks/](./documentation-tasks/)
 
 ## Communication
 
-- **Matrix Chat:** [#codeathon26:epics-controls.org](https://matrix.to/#/#codeathon26:epics-controls.org)
+- **Matrix Chat:** [#codeathon-oct26:epics-controls.org](https://matrix.to/#/#codeathon-oct26:epics-controls.org)
 - **Email:** shroffk@bnl.gov
 
 ---
@@ -77,9 +78,11 @@ See: [documentation-tasks/](./documentation-tasks/)
 
 ## Event Information
 
-- **Location:** Diamond Light Source, Harwell Campus, Oxfordshire, England
-- **Capacity:** Up to 40 participants
-- **Event Wiki:** [2026 EPICS Codeathon](https://github.com/epics-base/epics-base/wiki/2026-EPICS-Codeathon-and-Documentathon-hosted-by-Diamond)
+- **Location:** Brookhaven National Laboratory (BNL), Upton, NY
+- **Event Website:** https://www.bnl.gov/epics-codeathon/
+- **Registration:** https://www.bnl.gov/epics-codeathon/
+- **Site Access:** Event registration includes BNL guest-access steps for all attendees; follow the event instructions as early as possible
+- **Event Wiki:** [2026 EPICS Developers Meeting and Codeathon](https://github.com/epics-base/epics-base/wiki/2026-EPICS-Developers-Meeting-and-Codeathon-hosted-by-EIC)
 
 ---
 
