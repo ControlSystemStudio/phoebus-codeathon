@@ -22,6 +22,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | [PHOEBUS-UI-002](#phoebus-ui-002-data-browser-archive-data-source-management) | Data Browser Archive Data Source Management | Intermediate | Kunal, Sky| Started |
 | [PHOEBUS-UI-003](#phoebus-ui-003-fix-pv-resource-leak-in-widgetruntime) | Fix PV Resource Leak in WidgetRuntime | Beginner | Kunal | Started |
 | [PHOEBUS-UI-004](#phoebus-ui-004-interactive-graph-widget-for-xyplot) | Interactive Graph Widget for XYPlot | Advanced | | Not Started |
+| [PHOEBUS-UI-005](#phoebus-ui-005-chartfx-vs-rt-plot-review) | ChartFX vs RT Plot Review | Intermediate | | Not Started |
 | [PHOEBUS-UI-006](#phoebus-ui-006-remove-hardcoded-colors-for-css-consistency) | Remove Hardcoded Colors for Consistency | Intermediate | Urban Bobek (Cosylab) | In Progress |
 | [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | | Not Started |
 | [PHOEBUS-LINT-001](#phoebus-lint-001-display-builder-screen-linter) | Display Builder Screen Linter | Beginner | | Not Started |
@@ -42,6 +43,8 @@ This directory contains the list of development projects for the Phoebus tools a
 | [AI-LOG-001](#ai-log-001-intelligent-log-analysis-for-alarm-logs) | Intelligent Log Analysis for Alarm Logs | Intermediate | | Not Started |
 | **DevOps & Infrastructure** |||||
 | [DEVOPS-ANSIBLE-001](#devops-ansible-001-phoebus-infrastructure-deployment) | Phoebus Infrastructure Deployment | Intermediate | | Not Started |
+| [DEVOPS-ANSIBLE-002](#devops-ansible-002-test-and-validation-of-ansible-phoebus-roles) | Test and Validation of ansible-phoebus Roles | Intermediate | | Not Started |
+| [DEVOPS-CONTAINER-001](#devops-container-001-improve-dockerfiles-and-compose-for-phoebus-services) | Improve Dockerfiles and Compose for Phoebus Services | Intermediate | | Not Started |
 | [DEVOPS-VM-001](#devops-vm-001-epics-services-training-vm) | EPICS Services Training VM | Intermediate | | Not Started |
 
 ---
@@ -305,6 +308,26 @@ Add interactive editing capability to XYPlot graphs, allowing users to drag poin
 
 ---
 
+### PHOEBUS-UI-005: ChartFX vs RT Plot Review
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Intermediate  
+**Skills Required:** JavaFX, Plotting, UI Architecture, Evaluation / Technical Assessment  
+
+**Description:**  
+Review the JavaFX plotting stack and decide whether ChartFX or the current RT plot is the better long-term fit for Phoebus.
+
+- Compare compatibility, performance, and maintenance cost
+- Check support and integration impact
+
+**Resources:**
+- ChartFX repo: https://github.com/fair-acc/chart-fx
+- Plot library discussion: https://github.com/ControlSystemStudio/phoebus/issues/3362
+- Related RT plot work: https://github.com/ControlSystemStudio/phoebus/issues/3167
+
+**Assigned To:** _Available_
+
+---
 
 ### PHOEBUS-UI-006: Remove Hardcoded Colors for Consistency
 
@@ -756,7 +779,7 @@ Apply natural language processing and pattern recognition to alarm service logs 
 
 ### DEVOPS-ANSIBLE-001: Phoebus Infrastructure Deployment
 
-**Repository:** New ansible-phoebus-collection  
+**Repository:** https://github.com/ControlSystemStudio/ansible-phoebus  
 **Difficulty:** Intermediate  
 **Skills Required:** Ansible, Linux System Administration, Docker/Podman  
 
@@ -769,16 +792,63 @@ Create a comprehensive Ansible collection with roles and playbooks for deploying
 - Support multiple deployment targets: bare metal, containers (Docker/Podman), systemd services
 - Include SSL/TLS certificate configuration and secure credential management (Ansible Vault)
 - Add playbooks for common operations: deployment, updates, backups, health checks, scaling
-- Implement idempotent tasks with proper error handling and rollback capabilities
 - Create comprehensive documentation with example inventory files and variable configurations
 - Package as Ansible Galaxy collection for easy distribution and installation
-- Include molecule tests for role validation
 
 **Resources:**
 - Ansible best practices: https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html
 - Ansible Galaxy collections: https://docs.ansible.com/ansible/latest/collections_guide/index.html
 - Service repositories: https://github.com/ControlSystemStudio/
 - Molecule testing: https://ansible.readthedocs.io/projects/molecule/
+
+**Assigned To:** _Available_
+
+---
+
+### DEVOPS-ANSIBLE-002: Test and Validation of ansible-phoebus Roles
+
+**Repository:** https://github.com/ControlSystemStudio/ansible-phoebus  
+**Difficulty:** Intermediate  
+**Skills Required:** Ansible, Molecule, CI/CD, Linux System Administration  
+
+**Description:**  
+Create the test and validation framework for the `ansible-phoebus` deployment roles so the shared configuration can be trusted across facilities. The goal is to make the roles repeatable, safe to evolve, and easier to adopt in production environments.
+
+- Add Molecule or equivalent tests for the existing Ansible roles
+- Validate idempotency and rollback behavior for common deployment flows
+- Add linting and syntax checks for roles and playbooks
+- Define a minimal CI workflow for PR validation and release testing
+- Document expected role inputs, outputs, and failure modes
+
+**Resources:**
+- ansible-phoebus repository: https://github.com/ControlSystemStudio/ansible-phoebus
+- Molecule testing: https://ansible.readthedocs.io/projects/molecule/
+- Ansible best practices: https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html
+
+**Assigned To:** _Available_
+
+---
+
+### DEVOPS-CONTAINER-001: Improve Dockerfiles and Compose for Phoebus Services
+
+**Repository:** Multiple (Phoebus, Olog, ChannelFinder, Save & Restore, Alarm Services)  
+**Difficulty:** Intermediate  
+**Skills Required:** Docker/Podman, Compose, CI/CD, Service Configuration  
+
+**Description:**  
+Review and update the Dockerfiles and Compose files used for Phoebus and the middle-layer services so they are easier to build, run, and maintain across environments.
+
+- Standardize Dockerfiles for Phoebus and the service stack
+- Clean up Compose configuration for local development and testing
+- Make service startup and dependency wiring more reliable
+- Improve image build consistency and tag/version handling
+- Document the expected local and CI workflows for container usage
+- Update configuration defaults for common deployment scenarios
+
+**Resources:**
+- Docker: https://docs.docker.com/
+- Docker Compose: https://docs.docker.com/compose/
+- Phoebus service repositories: https://github.com/ControlSystemStudio/
 
 **Assigned To:** _Available_
 
