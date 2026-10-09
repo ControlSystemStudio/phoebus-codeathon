@@ -30,6 +30,7 @@ Moved from [documentation-tasks](../../documentation-tasks/README.md) and [proje
 | ALARM-KAFKA-002: Resilient topic handling with retry logic (Loic Caouen, CEA) | Tested and merged; also removed State topic from `delete_alarm_topics.sh` | [Project Results](https://github.com/epics-base/epics-base/wiki/2026-Codeathon-Project-Results) |
 | PHOEBUS-UI-005: Default email address preferences (Martin Gaughran, DLS) | Merged 2026-03-02 | [PR #3717](https://github.com/ControlSystemStudio/phoebus/pull/3717) |
 | SERVICES-HEALTH-001: Health endpoints for Phoebus services (Kunal Shroff, BNL) | Merged for Phoebus and Olog | [PR #3714](https://github.com/ControlSystemStudio/phoebus/pull/3714), [Olog PR #256](https://github.com/Olog/phoebus-olog/pull/256) |
+| SERVICES-RECSYNC-001: Java RecSync Implementation | Completed in the previous codeathon; Java implementation available in ChannelFinder/recceiver | https://github.com/ChannelFinder/recceiver |
 | Core-PVA DBE_MASK support (Sky Brewer, ESS) | Merged 2026-03-02 | [PR #3710](https://github.com/ControlSystemStudio/phoebus/pull/3710) |
 | Data Browser enhancements from CSNS: smoothing, waveform overlap (Georg Weiss, ESS) | Merged 2026-02-27 | [PR #3462](https://github.com/ControlSystemStudio/phoebus/pull/3462) |
 | SonarCloud for Phoebus and Olog; recsync-rs linting; ChannelFinderService Swagger UI fix (Sky Brewer) | Merged | [ChannelFinderService PR #203](https://github.com/ChannelFinder/ChannelFinderService/pull/203), [recsync-rs PR #7](https://github.com/ChannelFinder/recsync-rs/pull/7) |

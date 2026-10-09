@@ -16,14 +16,12 @@ This directory contains the list of development projects for the Phoebus tools a
 | [ALARM-UI-002](#alarm-ui-002-improve-alarm-log-table-searchquery-ui) | Improve Alarm Log Table Search/Query UI | Intermediate | ISIS | Started |
 | [ALARM-TOPICS-001](#alarm-topics-001-centralized-kafka-topic-management-service) | Centralized Kafka Topic Management Service | Intermediate | Georg Weiss (ESS) | In Progress |
 | **Phoebus UI & Framework** |||||
-| [PHOEBUS-VT-001](#phoebus-vt-001-virtual-threads-integration-assessment) | Virtual Threads Integration Assessment | Advanced | | Not Started |
+| [PHOEBUS-JDK25-001](#phoebus-jdk25-001-utilize-jdk-25-java-design-patterns) | Utilize JDK 25 Java Design Patterns | Advanced | | Not Started |
 | [PHOEBUS-UI-001](#phoebus-ui-001-fix-timerangepopover-relative-time-selection) | Fix TimeRangePopover Relative Time Selection | Beginner | | Not Started |
 | [PHOEBUS-UI-002](#phoebus-ui-002-data-browser-archive-data-source-management) | Data Browser Archive Data Source Management | Intermediate | Kunal, Sky| Started |
 | [PHOEBUS-UI-003](#phoebus-ui-003-fix-pv-resource-leak-in-widgetruntime) | Fix PV Resource Leak in WidgetRuntime | Beginner | Kunal | Started |
 | [PHOEBUS-UI-004](#phoebus-ui-004-interactive-graph-widget-for-xyplot) | Interactive Graph Widget for XYPlot | Advanced | | Not Started |
 | [PHOEBUS-UI-006](#phoebus-ui-006-remove-hardcoded-colors-for-css-consistency) | Remove Hardcoded Colors for Consistency | Intermediate | Urban Bobek (Cosylab) | In Progress |
-| [PHOEBUS-UI-007](#phoebus-ui-007-textentry-widget-autocomplete-suggestions) | TextEntry Widget Autocomplete Suggestions | Beginner | | Not Started |
-| [PHOEBUS-UI-008](#phoebus-ui-008-modernize-switch-statements-with-jdk-21-patterns) | Modernize Switch Statements with JDK 21 Patterns | Beginner | | Not Started |
 | [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | | Not Started |
 | [PHOEBUS-LINT-001](#phoebus-lint-001-display-builder-screen-linter) | Display Builder Screen Linter | Beginner | | Not Started |
 | **Middle Layer Services** |||||
@@ -31,9 +29,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | [SERVICES-VERSIONING-001](#services-versioning-001-rest-api-versioning-strategy) | REST API Versioning Strategy | Intermediate | | Started |
 | [SERVICES-WEBSOCKET-001](#services-websocket-001-websocket-support-as-a-alternative-to-polling-phoebus-services) | WebSocket Support as Alternative to Polling | Intermediate | | Not Started |
 | [SERVICES-CFNS-001](#services-cfns-001-multi-threaded-channelfinder-nameserver-with-broadcast-fallback) | Multi-threaded ChannelFinder Nameserver with Broadcast Fallback | Intermediate | | Not Started |
-| [SERVICES-RECSYNC-001](#services-recsync-001-java-recsync-implementation) | Java RecSync Implementation | Intermediate | | Not Started |
 | [SERVICES-RECSYNC-002](#services-recsync-002-convert-recceiver-to-pixi-project) | Convert RecCeiver to Pixi Project | Beginner | | Not Started |
-| [SERVICES-RECSYNC-003](#services-recsync-003-rust-recsync-implementation) | Rust RecSync Implementation | Intermediate | | Not Started |
 | [SERVICES-RECSYNC-004](#services-recsync-004-direct-pva-rpc-from-reccaster-to-channelfinder) | Direct PVA-RPC from RecCaster to ChannelFinder | Advanced | | Not Started |
 | **AI/ML Projects** |||||
 | [AI-DISPLAY-001](#ai-display-001-llm-assisted-display-screen-generation) | LLM-Assisted Display Screen Generation | Advanced | | Not Started |
@@ -185,15 +181,16 @@ Refactor the alarm server's Kafka topic creation and configuration logic into a 
 
 ---
 
-### PHOEBUS-VT-001: Virtual Threads Integration Assessment
+### PHOEBUS-JDK25-001: Utilize JDK 25 Java Design Patterns
 
 **Repository:** https://github.com/ControlSystemStudio/phoebus  
 **Difficulty:** Advanced  
-**Skills Required:** Java 21, Concurrency, Performance Analysis, Virtual Threads  
+**Skills Required:** Java 25, Concurrency, Performance Analysis, Virtual Threads, Pattern Matching  
 
 **Description:**  
-Identify and prototype Virtual Threads (Project Loom) integration opportunities across Phoebus services and tools. Analyze current threading model, identify blocking operations, and create proof-of-concept implementations showing performance improvements with virtual threads.
+Modernize Phoebus to take advantage of JDK 25 language and runtime features, combining a Virtual Threads (Project Loom) integration assessment with modernization of legacy switch statements using modern switch expressions and pattern matching.
 
+**Virtual Threads:**
 - Document current threading model in alarm-server, alarm-logger, alarm-config-logger, save-and-restore, scan-server
 - Identify blocking operations: Kafka I/O, Elasticsearch writes, Git operations, PV connections, database queries
 - Create branch with Virtual Thread executors for:
@@ -204,6 +201,17 @@ Identify and prototype Virtual Threads (Project Loom) integration opportunities 
   - Scan engine PV processing
 - Test with realistic load: 10k+ PVs, 100+ alarms/second, concurrent save-and-restore operations
 - Document migration strategy: code changes, JVM requirements, configuration
+
+**Switch Expressions & Pattern Matching:**
+- Identify switch statements that can benefit from modern pattern matching
+- Convert traditional switch statements to switch expressions where appropriate
+- Use pattern matching for instanceof checks in switch cases
+- Ensure exhaustiveness checking is leveraged
+- Add tests to verify behavior remains unchanged
+
+**Resources:**
+- JDK 21 Pattern Matching: https://openjdk.org/jeps/441
+- Switch Pattern Matching: https://docs.oracle.com/en/java/javase/21/language/pattern-matching.html
 
 **Assigned To:** _Available_
 
@@ -321,51 +329,6 @@ Refactor hardcoded color values throughout Phoebus to use a central ColorService
 **Assigned To:** Urban Bobek (Cosylab)  
 **Status:** Partially complete - [PR #3716](https://github.com/ControlSystemStudio/phoebus/pull/3716) merged 2026-03-30 (color service moved to `core/ui`). Hardcoded color cleanup remains.  
 **Notes:** Started migrating the widget color service to `core/ui` and compiling a list of all places where colors are either hard-coded or implemented in a non-standard way. This project lays the groundwork for the possibility of having the option to theme Phoebus.
-
----
-
-### PHOEBUS-UI-007: TextEntry Widget Autocomplete Suggestions
-
-**Repository:** https://github.com/ControlSystemStudio/phoebus  
-**Difficulty:** Beginner  
-**Skills Required:** Java, JavaFX, Display Builder  
-
-**Description:**  
-Review and merge PR 3541 which adds autocomplete/suggestion functionality to the TextEntry widget. Small code review task to verify implementation and documentation.
-
-- Test autocomplete functionality with different search algorithms (startswith, fuzzy, contains)
-- Verify option to allow/disallow values outside the suggestion list
-- Check that PV is only written on Enter key or suggestion selection
-- Review updated TextEntry demo display (controls_textentry.bob)
-
-**Resources:**
-- GitHub PR: https://github.com/ControlSystemStudio/phoebus/pull/3541
-- TextEntry demo: `app/display/model/src/main/resources/examples/controls_textentry.bob`
-
-**Assigned To:** _Available_
-
----
-
-### PHOEBUS-UI-008: Modernize Switch Statements with JDK 21 Patterns
-
-**Repository:** https://github.com/ControlSystemStudio/phoebus  
-**Difficulty:** Beginner  
-**Skills Required:** Java 21, Pattern Matching  
-
-**Description:**  
-Refactor legacy switch statements throughout Phoebus codebase to use JDK 21 modern switch expressions and pattern matching. Improve code readability and take advantage of exhaustiveness checking.
-
-- Identify switch statements that can benefit from JDK 21 pattern matching
-- Convert traditional switch statements to switch expressions where appropriate
-- Use pattern matching for instanceof checks in switch cases
-- Ensure exhaustiveness checking is leveraged
-- Add tests to verify behavior remains unchanged
-
-**Resources:**
-- JDK 21 Pattern Matching: https://openjdk.org/jeps/441
-- Switch Pattern Matching: https://docs.oracle.com/en/java/javase/21/language/pattern-matching.html
-
-**Assigned To:** _Available_
 
 ---
 
@@ -524,29 +487,6 @@ Enhance the ChannelFinder Nameserver (currently PVAccess-only) to support concur
 
 ---
 
-### SERVICES-RECSYNC-001: Java RecSync Implementation
-
-**Repository:** https://github.com/ChannelFinder/recsync  
-**Difficulty:** Intermediate  
-**Skills Required:** Java, EPICS IOC Communication, Network Programming  
-
-**Description:**  
-Develop a Java implementation of RecCeiver (recsync) for more robust and reliable IOC record monitoring and ChannelFinder synchronization.
-
-- Implement Java-based IOC record receiver matching RecCeiver functionality
-- Support modular architecture.
-- Implement health monitoring and status reporting endpoints
-- Add comprehensive logging for troubleshooting
-- Ensure compatibility with existing ChannelFinder deployments
-
-**Resources:**
-- recsync repository: https://github.com/ChannelFinder/recsync
-- ChannelFinder Service: https://github.com/ChannelFinder/ChannelFinderService
-
-**Assigned To:** _Available_
-
----
-
 ### SERVICES-RECSYNC-002: Convert RecCeiver to Pixi Project
 
 **Repository:** https://github.com/ChannelFinder/recsync  
@@ -573,29 +513,6 @@ Modernize the RecCeiver Python server by converting it from traditional setuptoo
 - RecCeiver server: https://github.com/ChannelFinder/recsync/tree/master/server
 - Pixi documentation: https://pixi.sh/
 - Current pyproject.toml: https://github.com/ChannelFinder/recsync/blob/master/server/pyproject.toml
-
-**Assigned To:** _Available_
-
----
-
-### SERVICES-RECSYNC-003: Rust RecSync Implementation
-
-**Repository:** https://github.com/ChannelFinder/recsync  
-**Difficulty:** Intermediate  
-**Skills Required:** Rust, EPICS IOC Communication, Network Programming  
-
-**Description:**  
-Develop a Rust implementation of RecCeiver (recsync) for high-performance, safe, and reliable IOC record monitoring and ChannelFinder synchronization.
-
-- Implement Rust-based IOC record receiver matching RecCeiver functionality
-- Utilize asynchronous programming (tokio/async-std) for efficient I/O
-- Implement health monitoring and status reporting endpoints
-- Ensure memory safety and high performance
-- Ensure compatibility with existing ChannelFinder deployments
-
-**Resources:**
-- recsync repository: https://github.com/ChannelFinder/recsync
-- ChannelFinder Service: https://github.com/ChannelFinder/ChannelFinderService
 
 **Assigned To:** _Available_
 
