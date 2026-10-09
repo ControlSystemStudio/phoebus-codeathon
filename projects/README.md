@@ -29,8 +29,11 @@ This directory contains the list of development projects for the Phoebus tools a
 | [SERVICES-SB4-001](#services-sb4-001-spring-boot-4-migration-planning) | Spring Boot 4 Migration Planning | Advanced | | Started |
 | [SERVICES-VERSIONING-001](#services-versioning-001-rest-api-versioning-strategy) | REST API Versioning Strategy | Intermediate | | Started |
 | [SERVICES-WEBSOCKET-001](#services-websocket-001-websocket-support-as-a-alternative-to-polling-phoebus-services) | WebSocket Support as Alternative to Polling | Intermediate | | Not Started |
+| [SERVICES-OLOG-001](#services-olog-001-elasticsearch-embeddings-index-mapping-and-template-update-for-olog) | Elasticsearch embeddings index mapping and template update for Olog | Intermediate | | Not Started |
 | [SERVICES-CFNS-001](#services-cfns-001-multi-threaded-channelfinder-nameserver-with-broadcast-fallback) | Multi-threaded ChannelFinder Nameserver with Broadcast Fallback | Intermediate | | Not Started |
+| [SERVICES-CF-DOC-001](#services-cf-doc-001-channel-lifecycle-documentation-and-diagram-for-the-channelfinder-ecosystem) | Channel lifecycle documentation and diagram for the ChannelFinder ecosystem | Beginner | | Not Started |
 | [SERVICES-RECSYNC-002](#services-recsync-002-restructure-recsync-repo-and-modernize-python-packaging) | Restructure recsync repo and modernize Python packaging | Beginner | | Not Started |
+| [SERVICES-RECSYNC-003](#services-recsync-003-receiver-lifecycle-state-cleanup) | RecCeiver lifecycle/state cleanup | Beginner | | Not Started |
 | [SERVICES-RECSYNC-004](#services-recsync-004-direct-pva-rpc-from-reccaster-to-channelfinder) | Direct PVA-RPC from RecCaster to ChannelFinder | Advanced | | Not Started |
 | **AI/ML Projects** |||||
 | [AI-DISPLAY-001](#ai-display-001-llm-assisted-display-screen-generation) | LLM-Assisted Display Screen Generation | Advanced | | Not Started |
@@ -457,6 +460,30 @@ Add WebSocket support to Phoebus clients for real-time updates from middle layer
 
 ---
 
+### SERVICES-OLOG-001: Elasticsearch embeddings index mapping and template update for Olog
+
+**Repository:** https://github.com/Olog/phoebus-olog  
+**Difficulty:** Intermediate  
+**Skills Required:** Elasticsearch, Java/Spring Boot, Index Mappings, DevOps  
+
+**Description:**  
+Update Olog's Elasticsearch mappings and templates to support vector embeddings for semantic search, while keeping the existing log search behavior working.
+
+- Add a `dense_vector` field (or equivalent mapping) for embeddings
+- Review index settings for dimensions, similarity, and indexing strategy
+- Check the impact on storage, memory, and search performance
+- Update the template and migration plan for existing Olog data
+- Validate compatibility with current Olog queries and field names
+
+**Resources:**
+- Olog repository: https://github.com/Olog/phoebus-olog
+- Elasticsearch dense vector mapping: https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/dense-vector
+- Elasticsearch vector performance guidance: https://www.elastic.co/docs/deploy-manage/production-guidance/optimize-performance/approximate-knn-search
+
+**Assigned To:** _Available_
+
+---
+
 ### SERVICES-CFNS-001: Multi-threaded ChannelFinder Nameserver with Broadcast Fallback
 
 **Repository:** https://github.com/ChannelFinder/cfNameserver  
@@ -467,22 +494,42 @@ Add WebSocket support to Phoebus clients for real-time updates from middle layer
 Enhance the ChannelFinder Nameserver (currently PVAccess-only) to support concurrent PV name resolution requests using multi-threading, and add intelligent fallback to broadcast name requests when PVs are not found in ChannelFinder database.
 
 - Implement multi-threaded request handling for concurrent PV name lookups
-- Add thread pool management with configurable pool size
 - Implement PVAccess broadcast fallback mechanism:
   - First attempt: Query ChannelFinder service for PV information
   - If PV not found: Fall back to PVAccess broadcast name resolution
   - Cache broadcast results temporarily to reduce network overhead
 - Add configuration options for:
-  - Thread pool size
-  - Fallback enable/disable toggle
-  - Cache timeout for broadcast results
-  - ChannelFinder query timeout
-- Ensure thread safety for shared resources and caching
+  - Thread pool size, Fallback enable/disable toggle, Cache timeout for broadcast results, ChannelFinder query timeout
 - Add performance metrics and logging for monitoring
 - Add Channel Access protocol support alongside existing PVAccess (nameserver currently only supports PVAccess)
 
 **Resources:**
 - cfNameserver repository: https://github.com/ChannelFinder/cfNameserver
+
+**Assigned To:** _Available_
+
+---
+
+### SERVICES-CF-DOC-001: Channel lifecycle documentation and diagram for the ChannelFinder ecosystem
+
+**Repository:** Multi-repository documentation project (ChannelFinder, cfNameserver, recceiver, recsync)  
+**Difficulty:** Beginner  
+**Skills Required:** Documentation, Architecture, Diagramming, System Design  
+
+**Description:**  
+Document the lifecycle of PV/channel state across the ChannelFinder ecosystem, including how channels are created, updated, marked undefined or disabled, and removed or reset during startup/shutdown and restarts. This project captures the output of the ChannelFinder/RecSync lifecycle discussion and turns it into a system diagram and a readable reference.
+
+- Produce a high-level diagram of the ChannelFinder ecosystem lifecycle which covers ChannelFinder, cfNameserver, recceiver, recsync, and recaster interactions
+- Document start-up, normal operation, restart, undefined/disabled states, and shutdown transitions
+- Clarify how lifecycle and property cleanup should behave across services
+- Identify open architectural questions and unresolved edge cases
+- Publish the diagram and explanation in the relevant docs or architecture notes
+
+**Resources:**
+- ChannelFinder service: https://github.com/ChannelFinder/ChannelFinderService
+- cfNameserver: https://github.com/ChannelFinder/cfNameserver
+- recceiver: https://github.com/ChannelFinder/recceiver
+- recsync: https://github.com/ChannelFinder/recsync
 
 **Assigned To:** _Available_
 
@@ -517,6 +564,34 @@ Complete the restructuring of the `recsync` repository so the architecture match
 - recsync issue: https://github.com/ChannelFinder/recsync/issues/174
 - RecCeiver/Twisted server area: https://github.com/ChannelFinder/recsync/tree/master/server
 - Pixi documentation: https://pixi.sh/
+
+**Assigned To:** _Available_
+
+---
+
+### SERVICES-RECSYNC-003: RecCeiver lifecycle/state cleanup
+
+**Repository:** https://github.com/ChannelFinder/recceiver  
+**Difficulty:** Beginner  
+**Skills Required:** Java, Lifecycle Management, State Handling, Testing  
+
+**Description:**  
+Group the easy cleanup work in the new Java `RecCeiver` implementation around lifecycle and state management. This is a focused sub-project that covers the startup/shutdown and cleanup issues without expanding into broader architecture redesign.
+
+- Implement the shutdown behavior for marking channels as `undefined` when the service stops
+- Ensure state is reset cleanly between restarts to avoid stale or inconsistent runtime state
+- Add/extend tests covering start/stop and restart behavior
+- Validate that the lifecycle cleanup is idempotent and safe under repeated restarts
+- Keep the work scoped to the current `RecCeiver` lifecycle issues rather than broader service redesign
+
+**Related issues:**
+- https://github.com/ChannelFinder/recceiver/issues/1
+- https://github.com/ChannelFinder/recceiver/issues/2
+- https://github.com/ChannelFinder/recceiver/issues/5
+
+**Resources:**
+- recceiver repository: https://github.com/ChannelFinder/recceiver
+- Issue tracker: https://github.com/ChannelFinder/recceiver/issues
 
 **Assigned To:** _Available_
 
