@@ -30,7 +30,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | [SERVICES-VERSIONING-001](#services-versioning-001-rest-api-versioning-strategy) | REST API Versioning Strategy | Intermediate | | Started |
 | [SERVICES-WEBSOCKET-001](#services-websocket-001-websocket-support-as-a-alternative-to-polling-phoebus-services) | WebSocket Support as Alternative to Polling | Intermediate | | Not Started |
 | [SERVICES-CFNS-001](#services-cfns-001-multi-threaded-channelfinder-nameserver-with-broadcast-fallback) | Multi-threaded ChannelFinder Nameserver with Broadcast Fallback | Intermediate | | Not Started |
-| [SERVICES-RECSYNC-002](#services-recsync-002-convert-recceiver-to-pixi-project) | Convert RecCeiver to Pixi Project | Beginner | | Not Started |
+| [SERVICES-RECSYNC-002](#services-recsync-002-restructure-recsync-repo-and-modernize-python-packaging) | Restructure recsync repo and modernize Python packaging | Beginner | | Not Started |
 | [SERVICES-RECSYNC-004](#services-recsync-004-direct-pva-rpc-from-reccaster-to-channelfinder) | Direct PVA-RPC from RecCaster to ChannelFinder | Advanced | | Not Started |
 | **AI/ML Projects** |||||
 | [AI-DISPLAY-001](#ai-display-001-llm-assisted-display-screen-generation) | LLM-Assisted Display Screen Generation | Advanced | | Not Started |
@@ -488,32 +488,35 @@ Enhance the ChannelFinder Nameserver (currently PVAccess-only) to support concur
 
 ---
 
-### SERVICES-RECSYNC-002: Convert RecCeiver to Pixi Project
+### SERVICES-RECSYNC-002: Restructure recsync repo and modernize Python packaging
 
 **Repository:** https://github.com/ChannelFinder/recsync  
 **Difficulty:** Beginner  
-**Skills Required:** Python, Pixi, Package Management  
+**Skills Required:** Python, Pixi, Package Management, Repo Restructuring  
 
 **Description:**  
-Modernize the RecCeiver Python server by converting it from traditional setuptools/pip packaging to Pixi for improved cross-platform dependency management and reproducible builds.
+Complete the restructuring of the `recsync` repository so the architecture matches the current split between the IOC-side `reccaster` and the Python/Twisted server side. This work is about repository layout and packaging modernization, not replacing Twisted itself.
 
-- Convert existing `pyproject.toml` to Pixi format or create `pixi.toml`
-- Generate `pixi.lock` for reproducible dependency resolution
-- Define development and production environments in Pixi configuration
-- Create Pixi tasks for common operations:
-  - `pixi run test` - Run pytest suite
-  - `pixi run lint` - Run ruff linting
-  - `pixi run format` - Run ruff formatting
-  - `pixi run server` - Start RecCeiver server
-- Update documentation with Pixi installation and usage instructions
-- Test cross-platform compatibility (Windows, macOS, Linux)
-- Maintain backward compatibility with existing deployment methods
-- Update Docker configuration if needed to work with Pixi
+- Split out the Python/Twisted server component from the remaining `recsync` repo structure, following the same pattern as the `reccaster` extraction
+- Create a clear project layout for the server package, shared utilities, and any remaining compatibility layers
+- Modernize the Python packaging/build setup for the server component using tools such as Pixi where appropriate
+- Generate `pixi.lock` for reproducible dependency resolution if the project adopts Pixi
+- Define development and production environments in the Python packaging configuration
+- Create common dev tasks for:
+  - `pytest` or equivalent tests
+  - linting/formatting
+  - local server startup
+- Update documentation with installation and usage instructions for the new repository layout
+- Maintain backward compatibility with existing deployment methods where possible
+- Track the repo split against the related issue: https://github.com/ChannelFinder/recsync/issues/174
+
+**Note:** Pixi is for packaging and environment management; it does not replace the Twisted server or change the runtime architecture. It may be used as a build/dev tooling layer, but the server remains a Twisted application.
 
 **Resources:**
-- RecCeiver server: https://github.com/ChannelFinder/recsync/tree/master/server
+- recsync repository: https://github.com/ChannelFinder/recsync
+- recsync issue: https://github.com/ChannelFinder/recsync/issues/174
+- RecCeiver/Twisted server area: https://github.com/ChannelFinder/recsync/tree/master/server
 - Pixi documentation: https://pixi.sh/
-- Current pyproject.toml: https://github.com/ChannelFinder/recsync/blob/master/server/pyproject.toml
 
 **Assigned To:** _Available_
 
