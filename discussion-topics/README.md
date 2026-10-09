@@ -107,10 +107,17 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Overall technical architecture and roadmap for the Phoebus service layer
   - Define the target architecture, service boundaries, migration path, and rough timeline for the ChannelFinder, alarm, and related middle-layer ecosystems
   - Clarify what should stay separate vs converge, and how current components fit together over time
+- [ ] Default ports and co-deployment on shared hosts
+  - Review whether each middle-layer service should ship with its own default port instead of all using `8080`
+  - Make it easier to run multiple services on the same server without immediate property-file changes
 - [ ] REST API standardization across services
 - [ ] Authentication and authorization strategy (OAuth2, JWT, LDAP)
 - [ ] Service discovery and registration
 - [ ] Load balancing and high availability
+- [ ] Servlet container alignment and Tomcat/Spring Boot direction
+  - DBWR, PVWS, and Archive Appliance do not currently align on the same Tomcat version
+  - Decide whether to converge on a newer shared Tomcat baseline or move more services to Spring Boot and embedded containers
+  - Reference PVWS Spring Boot work: https://github.com/ControlSystemStudio/pvws-springboot
 
 #### 2.2 Spring Boot 4 Migration
 - [ ] Spring Security 7: Enhanced OAuth2 resource server, authorization architecture improvements
@@ -258,6 +265,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Tooling to detect breaking public API changes; relax major-version bumps tied to JDK changes
 - [ ] Release cycle and timing ([#1380](https://github.com/ControlSystemStudio/phoebus/issues/1380))
   - Release tagging/versioning process and Maven Central publishing
+  - Input from CEA: publish more minor release tags so deployment processes can reliably target the latest official release version
 - [ ] LTS (Long Term Support) versions
 - [ ] Backwards compatibility policies
 - [ ] Migration guides and upgrade paths
@@ -380,4 +388,3 @@ Discussion on alarm services:
 - [Phoebus Documentation](https://github.com/ControlSystemStudio/phoebus/tree/master/docs)
 - [EPICS Website](https://epics-controls.org/)
 - [Previous Codeathon Reports](https://epics.anl.gov/meetings/)
-

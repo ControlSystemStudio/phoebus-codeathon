@@ -25,6 +25,9 @@ This directory contains the list of development projects for the Phoebus tools a
 | [PHOEBUS-UI-005](#phoebus-ui-005-chartfx-vs-rt-plot-review) | ChartFX vs RT Plot Review | Intermediate | | Not Started |
 | [PHOEBUS-UI-006](#phoebus-ui-006-remove-hardcoded-colors-for-css-consistency) | Remove Hardcoded Colors for Consistency | Intermediate | Urban Bobek (Cosylab) | In Progress |
 | [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | | Not Started |
+| [PHOEBUS-DEV-002](#phoebus-dev-002-document-logging-configuration-and-console-noise-reduction) | Document Logging Configuration and Console Noise Reduction | Beginner | | Not Started |
+| [PHOEBUS-DEV-003](#phoebus-dev-003-add-pre-commit-checks-to-pr-template-and-docs) | Add Pre-commit Checks to PR Template and Docs | Beginner | | Not Started |
+| [PHOEBUS-I18N-001](#phoebus-i18n-001-check-french-translation-files-for-duplicate-entries) | Check French Translation Files for Duplicate Entries | Beginner | | Not Started |
 | [PHOEBUS-LINT-001](#phoebus-lint-001-display-builder-screen-linter) | Display Builder Screen Linter | Beginner | | Not Started |
 | **Middle Layer Services** |||||
 | [SERVICES-SB4-001](#services-sb4-001-spring-boot-4-migration-planning) | Spring Boot 4 Migration Planning | Advanced | | Started |
@@ -381,6 +384,70 @@ Verify and update the IntelliJ IDEA setup instructions in the README. Test impor
 
 ---
 
+### PHOEBUS-DEV-002: Document Logging Configuration and Console Noise Reduction
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Java Logging, Documentation, Phoebus Configuration  
+
+**Description:**  
+Document how to reduce noisy Phoebus console logging and configure `logging.properties`, especially for chatty components such as Kafka.
+
+- Review current logging behavior and identify the noisiest default loggers
+- Document how to disable or lower log levels for common cases
+- Explain where `logging.properties` lives, how to override it, and how to apply changes
+- Add examples for Kafka and other common noisy components
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+- Java logging configuration: https://docs.oracle.com/en/java/javase/21/core/java-logging-overview.html
+
+**Assigned To:** _Available_
+
+---
+
+### PHOEBUS-DEV-003: Add Pre-commit Checks to PR Template and Docs
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Documentation, GitHub Workflow, Pre-commit  
+
+**Description:**  
+Update the PR template to remind contributors to run `pre-commit`, and document how to install and use the pre-commit setup for local checks.
+
+- Add a `pre-commit` reminder or checklist item to the PR template
+- Document how to install `pre-commit` and enable the hooks locally
+- Explain how to run the checks manually before opening a PR
+- Review whether the current contributor docs make the pre-commit workflow easy to discover
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+- Pre-commit: https://pre-commit.com/
+
+**Assigned To:** _Available_
+
+---
+
+### PHOEBUS-I18N-001: Check French Translation Files for Duplicate Entries
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Java, Localization Files, Attention to Detail  
+
+**Description:**  
+Review the French translation files and check for duplicate entries or inconsistent translations.
+
+- Find duplicate keys or repeated entries in the French localization files
+- Check whether duplicates are harmless, outdated, or causing incorrect text
+- Clean up obvious duplicates and note any entries that need translator review
+- Document the affected files and any follow-up translation questions
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+
+**Assigned To:** _Available_
+
+---
 
 ### SERVICES-SB4-001: Spring Boot 4 Migration Planning
 
