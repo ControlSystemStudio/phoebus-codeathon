@@ -1,0 +1,6 @@
+# This file contains page redirections,
+# so that we don't break URLs when renaming pages.
+#
+# For more information, see:
+# https://sphinxext-rediraffe.readthedocs.io/en/latest/
+

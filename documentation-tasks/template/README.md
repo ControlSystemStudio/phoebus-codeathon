@@ -7,6 +7,7 @@
 - Copy every file from the template to the root directory of your project, including hidden files, excluding the README.md
 - Change the project name in `docs/pyproject.toml`
 - Change the project name in `docs/conf.py`
+- Change the project name and source code repository URL in `docs/index.md`
 - Choose your profiles, remove the unneeded ones by:
   - Removing the directory
   - Removing the toctree in `docs/index.md`

@@ -3,7 +3,7 @@
 Insert content here.
 
 ```{toctree}
-:caption: Operator documentation
+:caption: Operator
 :maxdepth: 3
 :glob:
 
@@ -14,7 +14,7 @@ operator/references/index
 ```
 
 ```{toctree}
-:caption: Integrator documentation
+:caption: Integrator
 :maxdepth: 3
 :glob:
 
@@ -25,7 +25,7 @@ integrator/references/index
 ```
 
 ```{toctree}
-:caption: System admin documentation
+:caption: System admin
 :maxdepth: 3
 :glob:
 
@@ -36,7 +36,7 @@ sysadmin/references/index
 ```
 
 ```{toctree}
-:caption: Developer documentation
+:caption: Developer
 :maxdepth: 3
 :glob:
 
@@ -47,7 +47,7 @@ developer/references/index
 ```
 
 ```{toctree}
-:caption: Contributor documentation
+:caption: Contributor
 :maxdepth: 3
 :glob:
 
@@ -55,4 +55,12 @@ contributor/tutorials/index
 contributor/guides/index
 contributor/explanations/index
 contributor/references/index
+```
+
+```{toctree}
+:titlesonly:
+:caption: Resources
+
+changelog
+Source code repository <https://github.com/Olog/phoebus-olog>
 ```
