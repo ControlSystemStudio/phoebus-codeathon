@@ -24,7 +24,9 @@ This directory contains the list of development projects for the Phoebus tools a
 | [PHOEBUS-UI-004](#phoebus-ui-004-interactive-graph-widget-for-xyplot) | Interactive Graph Widget for XYPlot | Advanced | | Not Started |
 | [PHOEBUS-UI-005](#phoebus-ui-005-chartfx-vs-rt-plot-review) | ChartFX vs RT Plot Review | Intermediate | | Not Started |
 | [PHOEBUS-UI-006](#phoebus-ui-006-remove-hardcoded-colors-for-css-consistency) | Remove Hardcoded Colors for Consistency | Intermediate | Urban Bobek (Cosylab) | In Progress |
-| [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | | Not Started |
+| [PHOEBUS-UI-007](#phoebus-ui-007-textentry-widget-autocomplete-suggestions) | TextEntry Widget Autocomplete Suggestions | Beginner | | Not Started |
+| [PHOEBUS-UI-008](#phoebus-ui-008-modernize-switch-statements-with-jdk-21-patterns) | Modernize Switch Statements with JDK 21 Patterns | Beginner | | Not Started |
+| [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | Kathryn (ISIS) | Not Started |
 | [PHOEBUS-DEV-002](#phoebus-dev-002-document-logging-configuration-and-console-noise-reduction) | Document Logging Configuration and Console Noise Reduction | Beginner | | Not Started |
 | [PHOEBUS-DEV-003](#phoebus-dev-003-add-pre-commit-checks-to-pr-template-and-docs) | Add Pre-commit Checks to PR Template and Docs | Beginner | | Not Started |
 | [PHOEBUS-I18N-001](#phoebus-i18n-001-check-french-translation-files-for-duplicate-entries) | Check French Translation Files for Duplicate Entries | Beginner | | Not Started |
@@ -424,7 +426,7 @@ Update the PR template to remind contributors to run `pre-commit`, and document 
 - Phoebus repository: https://github.com/ControlSystemStudio/phoebus
 - Pre-commit: https://pre-commit.com/
 
-**Assigned To:** _Available_
+**Assigned To:** Kathryn (ISIS)
 
 ---
 
