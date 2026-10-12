@@ -22,34 +22,25 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 ### 1. Architecture & Framework
 
 #### 1.1 Phoebus Framework Evolution
+- [ ] Launcher and startup contract
+  - Formalize launcher behavior so facility-specific startups are not broken by changes ([#3828](https://github.com/ControlSystemStudio/phoebus/issues/3828) `-clean` with `-app`/`-resource`)
+  - [ ] Window positioning from BOB x/y properties ([#3871](https://github.com/ControlSystemStudio/phoebus/issues/3871))
+  - Deployment-only / multi-user product ([#3515](https://github.com/ControlSystemStudio/phoebus/issues/3515), [#410](https://github.com/ControlSystemStudio/phoebus/issues/410))
 - [ ] Plugin system improvements and standardization
 - [ ] Resource management and memory optimization
 - [ ] Cross-platform compatibility challenges (Windows, Linux, macOS)
   - Windows is used in control rooms and beamlines (Fermilab, SNS, PSI, Saclay): UNC/network-drive paths ([#3837](https://github.com/ControlSystemStudio/phoebus/issues/3837), [PR #3861](https://github.com/ControlSystemStudio/phoebus/pull/3861))
   - ARM / aarch64 support: JavaFX availability and docs build ([#3059](https://github.com/ControlSystemStudio/phoebus/issues/3059), [#3249](https://github.com/ControlSystemStudio/phoebus/issues/3249))
   - macOS and Debian build/runtime issues ([#3042](https://github.com/ControlSystemStudio/phoebus/issues/3042), [#3003](https://github.com/ControlSystemStudio/phoebus/issues/3003), [#3691](https://github.com/ControlSystemStudio/phoebus/issues/3691))
-- [ ] Launcher and startup contract
-  - Formalize launcher behavior so facility-specific startups are not broken by changes ([#3828](https://github.com/ControlSystemStudio/phoebus/issues/3828) `-clean` with `-app`/`-resource`)
-  - [ ] Window positioning from BOB x/y properties ([#3871](https://github.com/ControlSystemStudio/phoebus/issues/3871))
-  - Deployment-only / multi-user product ([#3515](https://github.com/ControlSystemStudio/phoebus/issues/3515), [#410](https://github.com/ControlSystemStudio/phoebus/issues/410))
 
-#### 1.2 UI/UX Framework Modernization
-- [ ] CSS styling and theming improvements
-- [ ] Responsive design patterns for different screen sizes
-- [ ] Dark mode and accessibility enhancements
-- [ ] Custom controls and widget library expansion
-- [ ] Central color/font service and generalized color definitions ([#3185](https://github.com/ControlSystemStudio/phoebus/issues/3185))
-- [ ] Performance with many windows/tabs and high update rates ([#3169](https://github.com/ControlSystemStudio/phoebus/issues/3169), RepresentationUpdateThrottle findings from DLS)
-  - Partially addressed: update throttle singleton merged in [PR #3792](https://github.com/ControlSystemStudio/phoebus/pull/3792) (2026-05-11); issue still open
-
-#### 1.3 Build System & Dependencies
+#### 1.2 Build System & Dependencies
 - [ ] Dependency management and version conflicts
   - Duplicate library versions in the product build; messy dependency tree
   - Large transitive dependencies ([#3123](https://github.com/ControlSystemStudio/phoebus/issues/3123))
 - [ ] Modularization strategy (Java modules/JPMS)
 - [ ] CI/CD pipeline improvements
 
-#### 1.4 Java Platform Modernization
+#### 1.3 Java Platform Modernization
 - [ ] **JDK 21 / 25 Follow-up and Stabilization**
   - Review edge cases and production regressions after the major dependency refresh
   - Confirm JavaFX compatibility, performance, and threading assumptions after the upgrade
@@ -65,7 +56,27 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Bulk modernization (switch patterns, records) using SonarCloud/IntelliJ reports ([#3708](https://github.com/ControlSystemStudio/phoebus/issues/3708))
   - Garbage collector behavior on JDK 25 (generational mode): memory/CPU trade-offs and operator experience
 
-#### 1.5 Display Builder & Operator UX
+#### 1.4 Test Strategy and Quality Bar
+- [ ] Unit testing and integration testing strategy for Phoebus services and middleware
+  - Define the minimum quality bar for unit tests vs integration tests across services
+  - Clarify which behaviors should be covered by mocks, embedded services, and end-to-end tests
+  - Review gaps exposed during dependency upgrades (e.g., Jackson/Elasticsearch bindings, Kafka error handling)
+  - Balance test breadth against developer velocity and CI runtime
+- [ ] CI/CD and regression protection for service-level changes
+  - Ensure upgrade-related changes get coverage in both local and service-level test pipelines
+  - Identify flaky tests and common blind spots in current pipelines
+
+#### 1.5 UI/UX Framework Modernization
+- [ ] CSS styling and theming improvements
+- [ ] Responsive design patterns for different screen sizes
+- [ ] Dark mode and accessibility enhancements
+- [ ] Custom controls and widget library expansion
+- [ ] JavaFX plotting stack review: evaluate ChartFX alongside the current RT plot and document whether it should be adopted, replaced, or kept as-is
+- [ ] Central color/font service and generalized color definitions ([#3185](https://github.com/ControlSystemStudio/phoebus/issues/3185))
+- [ ] Performance with many windows/tabs and high update rates ([#3169](https://github.com/ControlSystemStudio/phoebus/issues/3169), RepresentationUpdateThrottle findings from DLS)
+  - Partially addressed: update throttle singleton merged in [PR #3792](https://github.com/ControlSystemStudio/phoebus/pull/3792) (2026-05-11); issue still open
+
+#### 1.6 Display Builder & Operator UX
 - [ ] **Navigation and macros**
   - Navigation patterns across facilities (breadcrumbs, landing pages, macro-heavy hierarchies)
   - Diagnostics for where a macro is set; consistent relative path handling ([#3803](https://github.com/ControlSystemStudio/phoebus/issues/3803), [#3873](https://github.com/ControlSystemStudio/phoebus/issues/3873))
@@ -80,11 +91,11 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] **Display quality tooling**
   - Display linter/analyzer and automated GUI testing of displays ([#1965](https://github.com/ControlSystemStudio/phoebus/issues/1965))
 
-#### 1.6 Data Browser & Plotting
+#### 1.7 Data Browser & Plotting
 - [ ] Alarm limits in Data Browser ([#3889](https://github.com/ControlSystemStudio/phoebus/issues/3889)) and PV disconnect events
 - [ ] Optimized (last-sample) retrieval as default from Phoebus 6; more downsampling methods ([#3724](https://github.com/ControlSystemStudio/phoebus/issues/3724))
 - [ ] Archive data source management and independence from Archiver Appliance ([#3432](https://github.com/ControlSystemStudio/phoebus/issues/3432))
-- [ ] Plot library direction: ChartFX vs the current RT plot (RT plot needs a new owner) ([#3362](https://github.com/ControlSystemStudio/phoebus/issues/3362), [#3167](https://github.com/ControlSystemStudio/phoebus/issues/3167))
+- [ ] Plot library direction: evaluate ChartFX against the current RT plot, including JavaFX compatibility, API fit, licensing/support, maintenance ownership, and long-term roadmap ([#3362](https://github.com/ControlSystemStudio/phoebus/issues/3362), [#3167](https://github.com/ControlSystemStudio/phoebus/issues/3167))
 - [ ] Waterfall plots and new vtypes ([#3549](https://github.com/ControlSystemStudio/phoebus/issues/3549))
 - [ ] Alternative time-series backends (Parquet, InfluxDB) ([#3363](https://github.com/ControlSystemStudio/phoebus/issues/3363))
 
@@ -93,10 +104,20 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 ### 2. Middle Layer Services
 
 #### 2.1 Service Architecture
+- [ ] Overall technical architecture and roadmap for the Phoebus service layer
+  - Define the target architecture, service boundaries, migration path, and rough timeline for the ChannelFinder, alarm, and related middle-layer ecosystems
+  - Clarify what should stay separate vs converge, and how current components fit together over time
+- [ ] Default ports and co-deployment on shared hosts
+  - Review whether each middle-layer service should ship with its own default port instead of all using `8080`
+  - Make it easier to run multiple services on the same server without immediate property-file changes
 - [ ] REST API standardization across services
 - [ ] Authentication and authorization strategy (OAuth2, JWT, LDAP)
 - [ ] Service discovery and registration
 - [ ] Load balancing and high availability
+- [ ] Servlet container alignment and Tomcat/Spring Boot direction
+  - DBWR, PVWS, and Archive Appliance do not currently align on the same Tomcat version
+  - Decide whether to converge on a newer shared Tomcat baseline or move more services to Spring Boot and embedded containers
+  - Reference PVWS Spring Boot work: https://github.com/ControlSystemStudio/pvws-springboot
 
 #### 2.2 Spring Boot 4 Migration
 - [ ] Spring Security 7: Enhanced OAuth2 resource server, authorization architecture improvements
@@ -130,17 +151,28 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 
 #### 2.4 Olog Integration
 - [ ] Search and indexing improvements (Elasticsearch integration)
-- [ ] Template system enhancements
-- [ ] Integration with other services (ChannelFinder, Alarm)
+- [ ] **Elasticsearch embeddings and vector search**
+  - Evaluate the impact of storing embeddings alongside log entries: indexing cost, search latency, memory footprint, and additional storage requirements
+  - Understand the tradeoff between higher-dimensional embeddings and reduced precision/quantized vectors, especially for large Olog datasets
+  - Decide whether embeddings are used for semantic search only, hybrid lexical + vector search, or both
+  - Review how vector fields affect `_source`, reindexing, and operational cost in Elasticsearch
 - [ ] Notification mechanisms
 - [ ] **Search language and AI-assisted queries**
   - Search is growing into a DSL; options: query object, LLM natural-language to Elasticsearch translation, result summarization
   - Same needs exist in ChannelFinder and alarm log search
 - [ ] **Sunset of legacy Olog**
   - Decide timeline, data migration tool, and affected sites; keep legacy client in a separate repo meanwhile ([#2499](https://github.com/ControlSystemStudio/phoebus/issues/2499), [#3116](https://github.com/ControlSystemStudio/phoebus/issues/3116))
+- [ ] Template system enhancements
+- [ ] Integration with other services (ChannelFinder, Alarm)
 - [ ] OpenAPI/Swagger documentation for Olog (draft PR in progress)
 
 #### 2.5 ChannelFinder Service
+- [ ] Overall technical architecture and roadmap for the ChannelFinder ecosystem
+  - Review the long-term direction for ChannelFinder, CFNameServer, RecSync, and related components
+  - Define the target architecture, migration path, and rough timeline before diving into implementation details
+- [ ] **RecSync lifecycle and state transitions**
+  - Diagram the lifecycle of channels through the ChannelFinder ecosystem: creation, updates, undefined/disabled states, deletion or reset, and how RecCeiver/RecCaster interact with ChannelFinder and CFNameServer
+  - Clarify how startup, shutdown, and restart behavior should be represented in the system model before implementing cleanup changes
 - [ ] Property and tag management
 - [ ] Scalability for large installations (10M+ channels)
 - [ ] Integration with PVAccess and ChannelAccess Nameserver
@@ -161,6 +193,10 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Read-only / unauthenticated ChannelFinder client mode ([#2070](https://github.com/ControlSystemStudio/phoebus/issues/2070)) and a possible MCP endpoint for AI tooling
 
 #### 2.6 Alarm Services
+- [ ] Overall technical architecture and roadmap for the alarm ecosystem
+  - Review the long-term service boundaries, data flow, and deployment model before narrowing to implementation details
+  - Capture real alarm workflows and usage stories from facilities to identify architectural limitations, missing features, and the path forward
+  - Define the target architecture, migration path, and rough timeline for alarm config, logging, notifications, and operational tooling
 - [ ] Alarm configuration management
   - Batch add/edit of PVs, import/export, switching between many configurations (ESS runs 40+)
   - Interactive alarm editing proposal ([#3920](https://github.com/ControlSystemStudio/phoebus/issues/3920))
@@ -230,11 +266,28 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Tooling to detect breaking public API changes; relax major-version bumps tied to JDK changes
 - [ ] Release cycle and timing ([#1380](https://github.com/ControlSystemStudio/phoebus/issues/1380))
   - Release tagging/versioning process and Maven Central publishing
+  - Input from CEA: publish more minor release tags so deployment processes can reliably target the latest official release version
 - [ ] LTS (Long Term Support) versions
 - [ ] Backwards compatibility policies
 - [ ] Migration guides and upgrade paths
 
-#### 4.3 Community Engagement
+#### 4.3 DevOps & Deployment
+- [ ] Review and chart the path for the `ansible-phoebus` project
+  - Clarify repo scope, target audience, release path, and ownership for the deployment tooling
+  - Decide what belongs in the shared `ansible-phoebus` repository versus facility-specific playbooks or overlays
+  - Define a realistic roadmap for CI, testing, documentation, and long-term maintenance
+  - Review how the project should integrate with the Phoebus services stack and training/deployment workflows
+- [ ] Test and validate the roles in `ansible-phoebus`
+  - Define an appropriate CI and test strategy for role execution, configuration validation, and regression prevention
+  - Review how the roles are exercised in local or ephemeral environments before production deployment
+  - Document the expected role maturity, prerequisites, and operational guardrails
+- [ ] Container images and image publishing for Phoebus services
+  - Review Docker/Podman images for Phoebus and the middle-layer services
+  - Standardize the Dockerfiles and compose files used for local development and deployment
+  - Define a consistent tagging, publishing, and release process for container images
+  - Decide which images belong in shared upstream repos versus facility-specific overlays
+
+#### 4.4 Community Engagement
 - [ ] Codeathon planning and follow-up from previous sessions
 - [ ] Registration and travel logistics for in-person events and site access
 - [ ] Project review and onboarding for new contributors after codeathon work
@@ -244,7 +297,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Volunteers to test large upgrade PRs and pre-release builds; keep the open PR/issue backlog falling
   - Triage of 240+ open issues: close stale, label for codeathon
 
-#### 4.4 Documentation Strategy
+#### 4.5 Documentation Strategy
 - [ ] **Documentation Structure by User Profile** ([#3558](https://github.com/ControlSystemStudio/phoebus/issues/3558))
   - Reorganize docs by user type: Operator, Display Designer, Sysadmin, Contributor?
   - Consider [Diátaxis](https://diataxis.fr/) framework (Tutorials, Guides, References, Explanations)
@@ -336,4 +389,3 @@ Discussion on alarm services:
 - [Phoebus Documentation](https://github.com/ControlSystemStudio/phoebus/tree/master/docs)
 - [EPICS Website](https://epics-controls.org/)
 - [Previous Codeathon Reports](https://epics.anl.gov/meetings/)
-

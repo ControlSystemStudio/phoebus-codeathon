@@ -11,29 +11,35 @@ This directory contains the list of development projects for the Phoebus tools a
 |------------|-------|------------|-------------|--------|
 | **Alarm Services** |||||
 | [ALARM-KAFKA-001](#alarm-kafka-001-enhanced-kafka-streams-error-handling) | Enhanced Kafka Streams Error Handling | Advanced | | Not Started |
-| [ALARM-REST-001](#alarm-rest-001-alarm-configuration-rest-api) | Alarm Configuration REST API | Intermediate | | Not Started |
+| [ALARM-KAFKA-002](#alarm-kafka-002-resilient-topic-handling-with-retry-logic) | Resilient Topic Handling with Retry Logic | Intermediate | | Not Started |
+| [ALARM-REST-001](#alarm-rest-001-alarm-configuration-rest-api) | Alarm Configuration REST API | Intermediate | Anthony Carriveau | Started |
 | [ALARM-UI-001](#alarm-ui-001-display-highlow-alarm-limits-in-alarm-tree-tooltip) | Display High/Low Alarm Limits in Alarm Tree Tooltip | Intermediate | | Not Started |
 | [ALARM-UI-002](#alarm-ui-002-improve-alarm-log-table-searchquery-ui) | Improve Alarm Log Table Search/Query UI | Intermediate | ISIS | Started |
 | [ALARM-TOPICS-001](#alarm-topics-001-centralized-kafka-topic-management-service) | Centralized Kafka Topic Management Service | Intermediate | Georg Weiss (ESS) | In Progress |
 | **Phoebus UI & Framework** |||||
-| [PHOEBUS-VT-001](#phoebus-vt-001-virtual-threads-integration-assessment) | Virtual Threads Integration Assessment | Advanced | | Not Started |
+| [PHOEBUS-JDK25-001](#phoebus-jdk25-001-utilize-jdk-25-java-design-patterns) | Utilize JDK 25 Java Design Patterns | Advanced | | Not Started |
 | [PHOEBUS-UI-001](#phoebus-ui-001-fix-timerangepopover-relative-time-selection) | Fix TimeRangePopover Relative Time Selection | Beginner | | Not Started |
 | [PHOEBUS-UI-002](#phoebus-ui-002-data-browser-archive-data-source-management) | Data Browser Archive Data Source Management | Intermediate | Kunal, Sky| Started |
 | [PHOEBUS-UI-003](#phoebus-ui-003-fix-pv-resource-leak-in-widgetruntime) | Fix PV Resource Leak in WidgetRuntime | Beginner | Kunal | Started |
 | [PHOEBUS-UI-004](#phoebus-ui-004-interactive-graph-widget-for-xyplot) | Interactive Graph Widget for XYPlot | Advanced | | Not Started |
+| [PHOEBUS-UI-005](#phoebus-ui-005-chartfx-vs-rt-plot-review) | ChartFX vs RT Plot Review | Intermediate | | Not Started |
 | [PHOEBUS-UI-006](#phoebus-ui-006-remove-hardcoded-colors-for-css-consistency) | Remove Hardcoded Colors for Consistency | Intermediate | Urban Bobek (Cosylab) | In Progress |
 | [PHOEBUS-UI-007](#phoebus-ui-007-textentry-widget-autocomplete-suggestions) | TextEntry Widget Autocomplete Suggestions | Beginner | | Not Started |
 | [PHOEBUS-UI-008](#phoebus-ui-008-modernize-switch-statements-with-jdk-21-patterns) | Modernize Switch Statements with JDK 21 Patterns | Beginner | | Not Started |
 | [PHOEBUS-DEV-001](#phoebus-dev-001-verify-intellij-idea-setup-instructions) | Verify IntelliJ IDEA Setup Instructions | Beginner | Kathryn (ISIS) | Not Started |
+| [PHOEBUS-DEV-002](#phoebus-dev-002-document-logging-configuration-and-console-noise-reduction) | Document Logging Configuration and Console Noise Reduction | Beginner | | Not Started |
+| [PHOEBUS-DEV-003](#phoebus-dev-003-add-pre-commit-checks-to-pr-template-and-docs) | Add Pre-commit Checks to PR Template and Docs | Beginner | | Not Started |
+| [PHOEBUS-I18N-001](#phoebus-i18n-001-check-french-translation-files-for-duplicate-entries) | Check French Translation Files for Duplicate Entries | Beginner | | Not Started |
 | [PHOEBUS-LINT-001](#phoebus-lint-001-display-builder-screen-linter) | Display Builder Screen Linter | Beginner | | Not Started |
 | **Middle Layer Services** |||||
 | [SERVICES-SB4-001](#services-sb4-001-spring-boot-4-migration-planning) | Spring Boot 4 Migration Planning | Advanced | | Started |
 | [SERVICES-VERSIONING-001](#services-versioning-001-rest-api-versioning-strategy) | REST API Versioning Strategy | Intermediate | | Started |
 | [SERVICES-WEBSOCKET-001](#services-websocket-001-websocket-support-as-a-alternative-to-polling-phoebus-services) | WebSocket Support as Alternative to Polling | Intermediate | | Not Started |
+| [SERVICES-OLOG-001](#services-olog-001-elasticsearch-embeddings-index-mapping-and-template-update-for-olog) | Elasticsearch embeddings index mapping and template update for Olog | Intermediate | | Not Started |
 | [SERVICES-CFNS-001](#services-cfns-001-multi-threaded-channelfinder-nameserver-with-broadcast-fallback) | Multi-threaded ChannelFinder Nameserver with Broadcast Fallback | Intermediate | | Not Started |
-| [SERVICES-RECSYNC-001](#services-recsync-001-java-recsync-implementation) | Java RecSync Implementation | Intermediate | | Not Started |
-| [SERVICES-RECSYNC-002](#services-recsync-002-convert-recceiver-to-pixi-project) | Convert RecCeiver to Pixi Project | Beginner | | Not Started |
-| [SERVICES-RECSYNC-003](#services-recsync-003-rust-recsync-implementation) | Rust RecSync Implementation | Intermediate | | Not Started |
+| [SERVICES-CF-DOC-001](#services-cf-doc-001-channel-lifecycle-documentation-and-diagram-for-the-channelfinder-ecosystem) | Channel lifecycle documentation and diagram for the ChannelFinder ecosystem | Beginner | | Not Started |
+| [SERVICES-RECSYNC-002](#services-recsync-002-restructure-recsync-repo-and-modernize-python-packaging) | Restructure recsync repo and modernize Python packaging | Beginner | | Not Started |
+| [SERVICES-RECSYNC-003](#services-recsync-003-receiver-lifecycle-state-cleanup) | RecCeiver lifecycle/state cleanup | Beginner | | Not Started |
 | [SERVICES-RECSYNC-004](#services-recsync-004-direct-pva-rpc-from-reccaster-to-channelfinder) | Direct PVA-RPC from RecCaster to ChannelFinder | Advanced | | Not Started |
 | **AI/ML Projects** |||||
 | [AI-DISPLAY-001](#ai-display-001-llm-assisted-display-screen-generation) | LLM-Assisted Display Screen Generation | Advanced | | Not Started |
@@ -42,6 +48,8 @@ This directory contains the list of development projects for the Phoebus tools a
 | [AI-LOG-001](#ai-log-001-intelligent-log-analysis-for-alarm-logs) | Intelligent Log Analysis for Alarm Logs | Intermediate | | Not Started |
 | **DevOps & Infrastructure** |||||
 | [DEVOPS-ANSIBLE-001](#devops-ansible-001-phoebus-infrastructure-deployment) | Phoebus Infrastructure Deployment | Intermediate | | Not Started |
+| [DEVOPS-ANSIBLE-002](#devops-ansible-002-test-and-validation-of-ansible-phoebus-roles) | Test and Validation of ansible-phoebus Roles | Intermediate | | Not Started |
+| [DEVOPS-CONTAINER-001](#devops-container-001-improve-dockerfiles-and-compose-for-phoebus-services) | Improve Dockerfiles and Compose for Phoebus Services | Intermediate | | Not Started |
 | [DEVOPS-VM-001](#devops-vm-001-epics-services-training-vm) | EPICS Services Training VM | Intermediate | | Not Started |
 
 ---
@@ -102,7 +110,7 @@ Create a REST API for the alarm configuration service that exposes read-only acc
 - Add OpenAPI/Swagger documentation
 - Implement proper HTTP status codes (404 for missing nodes)
 
-**Assigned To:** _Available_
+**Assigned To:** _Anthony Carriveau_
 
 ---
 
@@ -185,15 +193,16 @@ Refactor the alarm server's Kafka topic creation and configuration logic into a 
 
 ---
 
-### PHOEBUS-VT-001: Virtual Threads Integration Assessment
+### PHOEBUS-JDK25-001: Utilize JDK 25 Java Design Patterns
 
 **Repository:** https://github.com/ControlSystemStudio/phoebus  
 **Difficulty:** Advanced  
-**Skills Required:** Java 21, Concurrency, Performance Analysis, Virtual Threads  
+**Skills Required:** Java 25, Concurrency, Performance Analysis, Virtual Threads, Pattern Matching  
 
 **Description:**  
-Identify and prototype Virtual Threads (Project Loom) integration opportunities across Phoebus services and tools. Analyze current threading model, identify blocking operations, and create proof-of-concept implementations showing performance improvements with virtual threads.
+Modernize Phoebus to take advantage of JDK 25 language and runtime features, combining a Virtual Threads (Project Loom) integration assessment with modernization of legacy switch statements using modern switch expressions and pattern matching.
 
+**Virtual Threads:**
 - Document current threading model in alarm-server, alarm-logger, alarm-config-logger, save-and-restore, scan-server
 - Identify blocking operations: Kafka I/O, Elasticsearch writes, Git operations, PV connections, database queries
 - Create branch with Virtual Thread executors for:
@@ -204,6 +213,17 @@ Identify and prototype Virtual Threads (Project Loom) integration opportunities 
   - Scan engine PV processing
 - Test with realistic load: 10k+ PVs, 100+ alarms/second, concurrent save-and-restore operations
 - Document migration strategy: code changes, JVM requirements, configuration
+
+**Switch Expressions & Pattern Matching:**
+- Identify switch statements that can benefit from modern pattern matching
+- Convert traditional switch statements to switch expressions where appropriate
+- Use pattern matching for instanceof checks in switch cases
+- Ensure exhaustiveness checking is leveraged
+- Add tests to verify behavior remains unchanged
+
+**Resources:**
+- JDK 21 Pattern Matching: https://openjdk.org/jeps/441
+- Switch Pattern Matching: https://docs.oracle.com/en/java/javase/21/language/pattern-matching.html
 
 **Assigned To:** _Available_
 
@@ -293,6 +313,26 @@ Add interactive editing capability to XYPlot graphs, allowing users to drag poin
 
 ---
 
+### PHOEBUS-UI-005: ChartFX vs RT Plot Review
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Intermediate  
+**Skills Required:** JavaFX, Plotting, UI Architecture, Evaluation / Technical Assessment  
+
+**Description:**  
+Review the JavaFX plotting stack and decide whether ChartFX or the current RT plot is the better long-term fit for Phoebus.
+
+- Compare compatibility, performance, and maintenance cost
+- Check support and integration impact
+
+**Resources:**
+- ChartFX repo: https://github.com/fair-acc/chart-fx
+- Plot library discussion: https://github.com/ControlSystemStudio/phoebus/issues/3362
+- Related RT plot work: https://github.com/ControlSystemStudio/phoebus/issues/3167
+
+**Assigned To:** _Available_
+
+---
 
 ### PHOEBUS-UI-006: Remove Hardcoded Colors for Consistency
 
@@ -324,51 +364,6 @@ Refactor hardcoded color values throughout Phoebus to use a central ColorService
 
 ---
 
-### PHOEBUS-UI-007: TextEntry Widget Autocomplete Suggestions
-
-**Repository:** https://github.com/ControlSystemStudio/phoebus  
-**Difficulty:** Beginner  
-**Skills Required:** Java, JavaFX, Display Builder  
-
-**Description:**  
-Review and merge PR 3541 which adds autocomplete/suggestion functionality to the TextEntry widget. Small code review task to verify implementation and documentation.
-
-- Test autocomplete functionality with different search algorithms (startswith, fuzzy, contains)
-- Verify option to allow/disallow values outside the suggestion list
-- Check that PV is only written on Enter key or suggestion selection
-- Review updated TextEntry demo display (controls_textentry.bob)
-
-**Resources:**
-- GitHub PR: https://github.com/ControlSystemStudio/phoebus/pull/3541
-- TextEntry demo: `app/display/model/src/main/resources/examples/controls_textentry.bob`
-
-**Assigned To:** _Available_
-
----
-
-### PHOEBUS-UI-008: Modernize Switch Statements with JDK 21 Patterns
-
-**Repository:** https://github.com/ControlSystemStudio/phoebus  
-**Difficulty:** Beginner  
-**Skills Required:** Java 21, Pattern Matching  
-
-**Description:**  
-Refactor legacy switch statements throughout Phoebus codebase to use JDK 21 modern switch expressions and pattern matching. Improve code readability and take advantage of exhaustiveness checking.
-
-- Identify switch statements that can benefit from JDK 21 pattern matching
-- Convert traditional switch statements to switch expressions where appropriate
-- Use pattern matching for instanceof checks in switch cases
-- Ensure exhaustiveness checking is leveraged
-- Add tests to verify behavior remains unchanged
-
-**Resources:**
-- JDK 21 Pattern Matching: https://openjdk.org/jeps/441
-- Switch Pattern Matching: https://docs.oracle.com/en/java/javase/21/language/pattern-matching.html
-
-**Assigned To:** _Available_
-
----
-
 ### PHOEBUS-DEV-001: Verify IntelliJ IDEA Setup Instructions
 
 **Repository:** https://github.com/ControlSystemStudio/phoebus  
@@ -387,10 +382,74 @@ Verify and update the IntelliJ IDEA setup instructions in the README. Test impor
 **Resources:**
 - Current instructions: https://github.com/ControlSystemStudio/phoebus#developing-with-intellij-idea
 
+**Assigned To:** _Available_
+
+---
+
+### PHOEBUS-DEV-002: Document Logging Configuration and Console Noise Reduction
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Java Logging, Documentation, Phoebus Configuration  
+
+**Description:**  
+Document how to reduce noisy Phoebus console logging and configure `logging.properties`, especially for chatty components such as Kafka.
+
+- Review current logging behavior and identify the noisiest default loggers
+- Document how to disable or lower log levels for common cases
+- Explain where `logging.properties` lives, how to override it, and how to apply changes
+- Add examples for Kafka and other common noisy components
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+- Java logging configuration: https://docs.oracle.com/en/java/javase/21/core/java-logging-overview.html
+
+**Assigned To:** _Available_
+
+---
+
+### PHOEBUS-DEV-003: Add Pre-commit Checks to PR Template and Docs
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Documentation, GitHub Workflow, Pre-commit  
+
+**Description:**  
+Update the PR template to remind contributors to run `pre-commit`, and document how to install and use the pre-commit setup for local checks.
+
+- Add a `pre-commit` reminder or checklist item to the PR template
+- Document how to install `pre-commit` and enable the hooks locally
+- Explain how to run the checks manually before opening a PR
+- Review whether the current contributor docs make the pre-commit workflow easy to discover
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+- Pre-commit: https://pre-commit.com/
+
 **Assigned To:** Kathryn (ISIS)
 
 ---
 
+### PHOEBUS-I18N-001: Check French Translation Files for Duplicate Entries
+
+**Repository:** https://github.com/ControlSystemStudio/phoebus  
+**Difficulty:** Beginner  
+**Skills Required:** Java, Localization Files, Attention to Detail  
+
+**Description:**  
+Review the French translation files and check for duplicate entries or inconsistent translations.
+
+- Find duplicate keys or repeated entries in the French localization files
+- Check whether duplicates are harmless, outdated, or causing incorrect text
+- Clean up obvious duplicates and note any entries that need translator review
+- Document the affected files and any follow-up translation questions
+
+**Resources:**
+- Phoebus repository: https://github.com/ControlSystemStudio/phoebus
+
+**Assigned To:** _Available_
+
+---
 
 ### SERVICES-SB4-001: Spring Boot 4 Migration Planning
 
@@ -493,6 +552,30 @@ Add WebSocket support to Phoebus clients for real-time updates from middle layer
 
 ---
 
+### SERVICES-OLOG-001: Elasticsearch embeddings index mapping and template update for Olog
+
+**Repository:** https://github.com/Olog/phoebus-olog  
+**Difficulty:** Intermediate  
+**Skills Required:** Elasticsearch, Java/Spring Boot, Index Mappings, DevOps  
+
+**Description:**  
+Update Olog's Elasticsearch mappings and templates to support vector embeddings for semantic search, while keeping the existing log search behavior working.
+
+- Add a `dense_vector` field (or equivalent mapping) for embeddings
+- Review index settings for dimensions, similarity, and indexing strategy
+- Check the impact on storage, memory, and search performance
+- Update the template and migration plan for existing Olog data
+- Validate compatibility with current Olog queries and field names
+
+**Resources:**
+- Olog repository: https://github.com/Olog/phoebus-olog
+- Elasticsearch dense vector mapping: https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/dense-vector
+- Elasticsearch vector performance guidance: https://www.elastic.co/docs/deploy-manage/production-guidance/optimize-performance/approximate-knn-search
+
+**Assigned To:** _Available_
+
+---
+
 ### SERVICES-CFNS-001: Multi-threaded ChannelFinder Nameserver with Broadcast Fallback
 
 **Repository:** https://github.com/ChannelFinder/cfNameserver  
@@ -503,17 +586,12 @@ Add WebSocket support to Phoebus clients for real-time updates from middle layer
 Enhance the ChannelFinder Nameserver (currently PVAccess-only) to support concurrent PV name resolution requests using multi-threading, and add intelligent fallback to broadcast name requests when PVs are not found in ChannelFinder database.
 
 - Implement multi-threaded request handling for concurrent PV name lookups
-- Add thread pool management with configurable pool size
 - Implement PVAccess broadcast fallback mechanism:
   - First attempt: Query ChannelFinder service for PV information
   - If PV not found: Fall back to PVAccess broadcast name resolution
   - Cache broadcast results temporarily to reduce network overhead
 - Add configuration options for:
-  - Thread pool size
-  - Fallback enable/disable toggle
-  - Cache timeout for broadcast results
-  - ChannelFinder query timeout
-- Ensure thread safety for shared resources and caching
+  - Thread pool size, Fallback enable/disable toggle, Cache timeout for broadcast results, ChannelFinder query timeout
 - Add performance metrics and logging for monitoring
 - Add Channel Access protocol support alongside existing PVAccess (nameserver currently only supports PVAccess)
 
@@ -524,78 +602,88 @@ Enhance the ChannelFinder Nameserver (currently PVAccess-only) to support concur
 
 ---
 
-### SERVICES-RECSYNC-001: Java RecSync Implementation
+### SERVICES-CF-DOC-001: Channel lifecycle documentation and diagram for the ChannelFinder ecosystem
 
-**Repository:** https://github.com/ChannelFinder/recsync  
-**Difficulty:** Intermediate  
-**Skills Required:** Java, EPICS IOC Communication, Network Programming  
+**Repository:** Multi-repository documentation project (ChannelFinder, cfNameserver, recceiver, recsync)  
+**Difficulty:** Beginner  
+**Skills Required:** Documentation, Architecture, Diagramming, System Design  
 
 **Description:**  
-Develop a Java implementation of RecCeiver (recsync) for more robust and reliable IOC record monitoring and ChannelFinder synchronization.
+Document the lifecycle of PV/channel state across the ChannelFinder ecosystem, including how channels are created, updated, marked undefined or disabled, and removed or reset during startup/shutdown and restarts. This project captures the output of the ChannelFinder/RecSync lifecycle discussion and turns it into a system diagram and a readable reference.
 
-- Implement Java-based IOC record receiver matching RecCeiver functionality
-- Support modular architecture.
-- Implement health monitoring and status reporting endpoints
-- Add comprehensive logging for troubleshooting
-- Ensure compatibility with existing ChannelFinder deployments
+- Produce a high-level diagram of the ChannelFinder ecosystem lifecycle which covers ChannelFinder, cfNameserver, recceiver, recsync, and recaster interactions
+- Document start-up, normal operation, restart, undefined/disabled states, and shutdown transitions
+- Clarify how lifecycle and property cleanup should behave across services
+- Identify open architectural questions and unresolved edge cases
+- Publish the diagram and explanation in the relevant docs or architecture notes
 
 **Resources:**
-- recsync repository: https://github.com/ChannelFinder/recsync
-- ChannelFinder Service: https://github.com/ChannelFinder/ChannelFinderService
+- ChannelFinder service: https://github.com/ChannelFinder/ChannelFinderService
+- cfNameserver: https://github.com/ChannelFinder/cfNameserver
+- recceiver: https://github.com/ChannelFinder/recceiver
+- recsync: https://github.com/ChannelFinder/recsync
 
 **Assigned To:** _Available_
 
 ---
 
-### SERVICES-RECSYNC-002: Convert RecCeiver to Pixi Project
+### SERVICES-RECSYNC-002: Restructure recsync repo and modernize Python packaging
 
 **Repository:** https://github.com/ChannelFinder/recsync  
 **Difficulty:** Beginner  
-**Skills Required:** Python, Pixi, Package Management  
+**Skills Required:** Python, Pixi, Package Management, Repo Restructuring  
 
 **Description:**  
-Modernize the RecCeiver Python server by converting it from traditional setuptools/pip packaging to Pixi for improved cross-platform dependency management and reproducible builds.
+Complete the restructuring of the `recsync` repository so the architecture matches the current split between the IOC-side `reccaster` and the Python/Twisted server side. This work is about repository layout and packaging modernization, not replacing Twisted itself.
 
-- Convert existing `pyproject.toml` to Pixi format or create `pixi.toml`
-- Generate `pixi.lock` for reproducible dependency resolution
-- Define development and production environments in Pixi configuration
-- Create Pixi tasks for common operations:
-  - `pixi run test` - Run pytest suite
-  - `pixi run lint` - Run ruff linting
-  - `pixi run format` - Run ruff formatting
-  - `pixi run server` - Start RecCeiver server
-- Update documentation with Pixi installation and usage instructions
-- Test cross-platform compatibility (Windows, macOS, Linux)
-- Maintain backward compatibility with existing deployment methods
-- Update Docker configuration if needed to work with Pixi
+- Split out the Python/Twisted server component from the remaining `recsync` repo structure, following the same pattern as the `reccaster` extraction
+- Create a clear project layout for the server package, shared utilities, and any remaining compatibility layers
+- Modernize the Python packaging/build setup for the server component using tools such as Pixi where appropriate
+- Generate `pixi.lock` for reproducible dependency resolution if the project adopts Pixi
+- Define development and production environments in the Python packaging configuration
+- Create common dev tasks for:
+  - `pytest` or equivalent tests
+  - linting/formatting
+  - local server startup
+- Update documentation with installation and usage instructions for the new repository layout
+- Maintain backward compatibility with existing deployment methods where possible
+- Track the repo split against the related issue: https://github.com/ChannelFinder/recsync/issues/174
+
+**Note:** Pixi is for packaging and environment management; it does not replace the Twisted server or change the runtime architecture. It may be used as a build/dev tooling layer, but the server remains a Twisted application.
 
 **Resources:**
-- RecCeiver server: https://github.com/ChannelFinder/recsync/tree/master/server
+- recsync repository: https://github.com/ChannelFinder/recsync
+- recsync issue: https://github.com/ChannelFinder/recsync/issues/174
+- RecCeiver/Twisted server area: https://github.com/ChannelFinder/recsync/tree/master/server
 - Pixi documentation: https://pixi.sh/
-- Current pyproject.toml: https://github.com/ChannelFinder/recsync/blob/master/server/pyproject.toml
 
 **Assigned To:** _Available_
 
 ---
 
-### SERVICES-RECSYNC-003: Rust RecSync Implementation
+### SERVICES-RECSYNC-003: RecCeiver lifecycle/state cleanup
 
-**Repository:** https://github.com/ChannelFinder/recsync  
-**Difficulty:** Intermediate  
-**Skills Required:** Rust, EPICS IOC Communication, Network Programming  
+**Repository:** https://github.com/ChannelFinder/recceiver  
+**Difficulty:** Beginner  
+**Skills Required:** Java, Lifecycle Management, State Handling, Testing  
 
 **Description:**  
-Develop a Rust implementation of RecCeiver (recsync) for high-performance, safe, and reliable IOC record monitoring and ChannelFinder synchronization.
+Group the easy cleanup work in the new Java `RecCeiver` implementation around lifecycle and state management. This is a focused sub-project that covers the startup/shutdown and cleanup issues without expanding into broader architecture redesign.
 
-- Implement Rust-based IOC record receiver matching RecCeiver functionality
-- Utilize asynchronous programming (tokio/async-std) for efficient I/O
-- Implement health monitoring and status reporting endpoints
-- Ensure memory safety and high performance
-- Ensure compatibility with existing ChannelFinder deployments
+- Implement the shutdown behavior for marking channels as `undefined` when the service stops
+- Ensure state is reset cleanly between restarts to avoid stale or inconsistent runtime state
+- Add/extend tests covering start/stop and restart behavior
+- Validate that the lifecycle cleanup is idempotent and safe under repeated restarts
+- Keep the work scoped to the current `RecCeiver` lifecycle issues rather than broader service redesign
+
+**Related issues:**
+- https://github.com/ChannelFinder/recceiver/issues/1
+- https://github.com/ChannelFinder/recceiver/issues/2
+- https://github.com/ChannelFinder/recceiver/issues/5
 
 **Resources:**
-- recsync repository: https://github.com/ChannelFinder/recsync
-- ChannelFinder Service: https://github.com/ChannelFinder/ChannelFinderService
+- recceiver repository: https://github.com/ChannelFinder/recceiver
+- Issue tracker: https://github.com/ChannelFinder/recceiver/issues
 
 **Assigned To:** _Available_
 
@@ -760,7 +848,7 @@ Apply natural language processing and pattern recognition to alarm service logs 
 
 ### DEVOPS-ANSIBLE-001: Phoebus Infrastructure Deployment
 
-**Repository:** New ansible-phoebus-collection  
+**Repository:** https://github.com/ControlSystemStudio/ansible-phoebus  
 **Difficulty:** Intermediate  
 **Skills Required:** Ansible, Linux System Administration, Docker/Podman  
 
@@ -773,16 +861,63 @@ Create a comprehensive Ansible collection with roles and playbooks for deploying
 - Support multiple deployment targets: bare metal, containers (Docker/Podman), systemd services
 - Include SSL/TLS certificate configuration and secure credential management (Ansible Vault)
 - Add playbooks for common operations: deployment, updates, backups, health checks, scaling
-- Implement idempotent tasks with proper error handling and rollback capabilities
 - Create comprehensive documentation with example inventory files and variable configurations
 - Package as Ansible Galaxy collection for easy distribution and installation
-- Include molecule tests for role validation
 
 **Resources:**
 - Ansible best practices: https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html
 - Ansible Galaxy collections: https://docs.ansible.com/ansible/latest/collections_guide/index.html
 - Service repositories: https://github.com/ControlSystemStudio/
 - Molecule testing: https://ansible.readthedocs.io/projects/molecule/
+
+**Assigned To:** _Available_
+
+---
+
+### DEVOPS-ANSIBLE-002: Test and Validation of ansible-phoebus Roles
+
+**Repository:** https://github.com/ControlSystemStudio/ansible-phoebus  
+**Difficulty:** Intermediate  
+**Skills Required:** Ansible, Molecule, CI/CD, Linux System Administration  
+
+**Description:**  
+Create the test and validation framework for the `ansible-phoebus` deployment roles so the shared configuration can be trusted across facilities. The goal is to make the roles repeatable, safe to evolve, and easier to adopt in production environments.
+
+- Add Molecule or equivalent tests for the existing Ansible roles
+- Validate idempotency and rollback behavior for common deployment flows
+- Add linting and syntax checks for roles and playbooks
+- Define a minimal CI workflow for PR validation and release testing
+- Document expected role inputs, outputs, and failure modes
+
+**Resources:**
+- ansible-phoebus repository: https://github.com/ControlSystemStudio/ansible-phoebus
+- Molecule testing: https://ansible.readthedocs.io/projects/molecule/
+- Ansible best practices: https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html
+
+**Assigned To:** _Available_
+
+---
+
+### DEVOPS-CONTAINER-001: Improve Dockerfiles and Compose for Phoebus Services
+
+**Repository:** Multiple (Phoebus, Olog, ChannelFinder, Save & Restore, Alarm Services)  
+**Difficulty:** Intermediate  
+**Skills Required:** Docker/Podman, Compose, CI/CD, Service Configuration  
+
+**Description:**  
+Review and update the Dockerfiles and Compose files used for Phoebus and the middle-layer services so they are easier to build, run, and maintain across environments.
+
+- Standardize Dockerfiles for Phoebus and the service stack
+- Clean up Compose configuration for local development and testing
+- Make service startup and dependency wiring more reliable
+- Improve image build consistency and tag/version handling
+- Document the expected local and CI workflows for container usage
+- Update configuration defaults for common deployment scenarios
+
+**Resources:**
+- Docker: https://docs.docker.com/
+- Docker Compose: https://docs.docker.com/compose/
+- Phoebus service repositories: https://github.com/ControlSystemStudio/
 
 **Assigned To:** _Available_
 
