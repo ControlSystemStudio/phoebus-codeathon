@@ -219,6 +219,9 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Compare current values to stored snapshots
 - [ ] Binary values in snapshots ([#2755](https://github.com/ControlSystemStudio/phoebus/issues/2755))
 - [ ] Allow hide/reorder of columns in UI ([#3947](https://github.com/ControlSystemStudio/phoebus/issues/3947))
+- [ ] Reconsider using parallel requests for restore
+  * There are technical issues (no GH issue yet, still researching)
+  * Sometimes, PVs need to be restored in a certain order
 
 #### 2.8 Service Health, Testing & Realtime Updates
 - [ ] Health endpoint reporting improvements (start with Alarm Logger)
