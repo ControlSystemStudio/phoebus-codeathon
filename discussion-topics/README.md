@@ -74,6 +74,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Diagnostics for where a macro is set; consistent relative path handling ([#3803](https://github.com/ControlSystemStudio/phoebus/issues/3803), [#3873](https://github.com/ControlSystemStudio/phoebus/issues/3873))
 - [ ] **Actions and rules**
   - Generic action framework (open data browser, Save & Restore, layouts) with backward compatibility
+  - Integrate Save & Restore into OPI action buttons so operators can launch restore-related workflows directly from displays
   - Formulas in Write PV action ([#3941](https://github.com/ControlSystemStudio/phoebus/issues/3941)), rules using other widgets' properties ([#3862](https://github.com/ControlSystemStudio/phoebus/issues/3862))
 - [ ] **Widget behavior and defaults**
   - Per-widget update rate (currently a global throttle)
@@ -207,6 +208,12 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Per-user permissions, per-alarm permissions ([#1336](https://github.com/ControlSystemStudio/phoebus/issues/1336)), and security concerns ([#3702](https://github.com/ControlSystemStudio/phoebus/issues/3702))
 
 #### 2.7 Save & Restore
+- [ ] Collect Save & Restore usage workflows from facilities
+  - Capture how sites organize snapshots, configurations, approvals, restore operations, and operator interactions
+  - Identify the common workflows as well as facility-specific constraints that should shape UI and service changes
+- [ ] Discuss how to make Save & Restore configurations easier to build and maintain
+  - Review workflows for creating configurations from IOCs, displays, templates, or ChannelFinder data
+  - Identify missing tooling for bulk creation, editing, import/export, and validation of configurations
 - [ ] Access security implications of "restore from service" ([#3357](https://github.com/ControlSystemStudio/phoebus/issues/3357))
 - [ ] Credentials handling and embedded LDAP / hashed passwords ([#3045](https://github.com/ControlSystemStudio/phoebus/issues/3045), [#3378](https://github.com/ControlSystemStudio/phoebus/issues/3378))
 - [ ] Compare current values to stored snapshots
