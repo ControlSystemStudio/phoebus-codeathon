@@ -41,6 +41,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | [SERVICES-RECSYNC-002](#services-recsync-002-restructure-recsync-repo-and-modernize-python-packaging) | Restructure recsync repo and modernize Python packaging | Beginner | | Not Started |
 | [SERVICES-RECSYNC-003](#services-recsync-003-receiver-lifecycle-state-cleanup) | RecCeiver lifecycle/state cleanup | Beginner | | Not Started |
 | [SERVICES-RECSYNC-004](#services-recsync-004-direct-pva-rpc-from-reccaster-to-channelfinder) | Direct PVA-RPC from RecCaster to ChannelFinder | Advanced | | Not Started |
+| [SERVICES-RECSYNC-005](#services-recsync-005-reccaster-unicast-mode) | RecCaster unicast mode | Intermediate | | Not Started |
 | **AI/ML Projects** |||||
 | [AI-DISPLAY-001](#ai-display-001-llm-assisted-display-screen-generation) | LLM-Assisted Display Screen Generation | Advanced | | Not Started |
 | [AI-DISPLAY-002](#ai-display-002-llm-based-display-screen-cicd-validator) | LLM-Based Display Screen CI/CD Validator | Intermediate | | Not Started |
@@ -708,6 +709,30 @@ Explore and implement a direct communication path between the EPICS IOC componen
 - recsync repository: https://github.com/ChannelFinder/recsync
 - ChannelFinder Service: https://github.com/ChannelFinder/ChannelFinderService
 - PVAccess (PVA-RPC) documentation: https://epics-base.github.io/pvDataCPP/pva_rpc.html
+
+**Assigned To:** _Available_
+
+---
+
+### SERVICES-RECSYNC-005: RecCaster unicast mode
+
+**Repository:** https://github.com/ChannelFinder/recsync  
+**Difficulty:** Intermediate  
+**Skills Required:** EPICS IOC Development, C/C++ or IOC Module Work, Network Configuration, Testing  
+
+**Description:**  
+Add and validate a unicast mode for `reccaster` so sites can explicitly target one or more `RecCeiver` endpoints without depending on broadcast discovery.
+
+- Implement configuration for `reccaster` to send updates in unicast/TCP mode to configured receiver endpoints
+- Preserve existing behavior or provide a clear compatibility path for current broadcast-based deployments
+- Test behavior on networks where broadcast is restricted or undesirable
+- Document expected deployment workflows, including when unicast mode should be preferred over broadcast discovery
+- Capture any overlap with EPICS Base or protocol-layer concerns that should be discussed in the shared sessions
+- Track the work against the related issue: https://github.com/ChannelFinder/recsync/issues/108
+
+**Resources:**
+- recsync repository: https://github.com/ChannelFinder/recsync
+- recsync issue: https://github.com/ChannelFinder/recsync/issues/108
 
 **Assigned To:** _Available_
 

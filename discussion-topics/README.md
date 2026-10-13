@@ -9,14 +9,6 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 
 ---
 
-## Discussion Format
-
-- **Duration:** 
-- **Participants:** Developers and maintainers
-- **Goal:** Strategic planning, architecture discussions, and technical decisions
-
----
-
 ## Technical Discussion Topics
 
 ### 1. Architecture & Framework
@@ -173,9 +165,9 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] **RecSync lifecycle and state transitions**
   - Diagram the lifecycle of channels through the ChannelFinder ecosystem: creation, updates, undefined/disabled states, deletion or reset, and how RecCeiver/RecCaster interact with ChannelFinder and CFNameServer
   - Clarify how startup, shutdown, and restart behavior should be represented in the system model before implementing cleanup changes
-- [ ] Property and tag management
 - [ ] Scalability for large installations (10M+ channels)
 - [ ] Integration with PVAccess and ChannelAccess Nameserver
+- [ ] Property and tag management
 - [ ] **PVAccess name resolution and CF NameServer**
   - Shared behavior for search/backoff/timeout logic across name services
   - Consider moving common NameService logic into CorePVA / pvAccess libraries
@@ -187,6 +179,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] **RecSync restructuring**
   - New Java RecCeiver (testing at 2M to 4M channels, volunteers from ALS, ESS, ISIS)
   - RecCaster as a standalone EPICS module with a configurable RecCeiver list instead of UDP beacon discovery
+  - RecCaster in unicast mode ([recsync#108](https://github.com/ChannelFinder/recsync/issues/108))
   - Protocol compatibility between RecCaster and RecCeiver versions; possible rename of the repo
 - [ ] **Service architecture options**
   - Keep separate, merge ChannelFinder with CFNameServer, merge all, or merge RecCeiver with ChannelFinder/NameServer
