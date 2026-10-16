@@ -18,6 +18,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Formalize launcher behavior so facility-specific startups are not broken by changes ([#3828](https://github.com/ControlSystemStudio/phoebus/issues/3828) `-clean` with `-app`/`-resource`)
   - [ ] Window positioning from BOB x/y properties ([#3871](https://github.com/ControlSystemStudio/phoebus/issues/3871))
   - Deployment-only / multi-user product ([#3515](https://github.com/ControlSystemStudio/phoebus/issues/3515), [#410](https://github.com/ControlSystemStudio/phoebus/issues/410))
+  - Kiosk mode for display monitors, including using the alarm handler on dedicated monitor screens
 - [ ] Plugin system improvements and standardization
 - [ ] Resource management and memory optimization
 - [ ] Cross-platform compatibility challenges (Windows, Linux, macOS)
@@ -59,6 +60,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Identify flaky tests and common blind spots in current pipelines
 
 #### 1.5 UI/UX Framework Modernization
+- [ ] Quick discussion topic: identify which Phoebus applications should support kiosk mode, starting with the Display Builder runtime and alarm applications as the first candidates
 - [ ] CSS styling and theming improvements
 - [ ] Responsive design patterns for different screen sizes
 - [ ] Dark mode and accessibility enhancements
@@ -263,6 +265,11 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Unit testing and test coverage goals
 - [ ] Documentation standards
 - [ ] Java code conventions ([#894](https://github.com/ControlSystemStudio/phoebus/issues/894)) and IDE guidance (IntelliJ first; drop or de-emphasize Eclipse configuration)
+- [ ] AI-assisted development workflow and repository guardrails
+  - Define how AI is used in development: code generation, refactoring, test authoring, issue triage, and documentation support
+  - Establish repository-level guardrails using GitHub Copilot custom instructions and shared `AGENTS.md` conventions
+  - Review best practices from: [GitHub Copilot repository instructions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions), [Temporal SDK Java AGENTS.md](https://github.com/temporalio/sdk-java/blob/-/AGENTS.md), [Agents.md](https://agents.md/), and the [DevAgentStack guide](https://devagentstack.com/guide/) with emphasis on steps 03 and 04
+  - Require scoped prompts, explicit task definition, and verification steps so AI-assisted changes stay auditable and reproducible
 
 #### 4.2 Release Management
 - [ ] Versioning strategy (semantic versioning)
