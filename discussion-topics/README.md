@@ -18,6 +18,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Formalize launcher behavior so facility-specific startups are not broken by changes ([#3828](https://github.com/ControlSystemStudio/phoebus/issues/3828) `-clean` with `-app`/`-resource`)
   - [ ] Window positioning from BOB x/y properties ([#3871](https://github.com/ControlSystemStudio/phoebus/issues/3871))
   - Deployment-only / multi-user product ([#3515](https://github.com/ControlSystemStudio/phoebus/issues/3515), [#410](https://github.com/ControlSystemStudio/phoebus/issues/410))
+  - Kiosk mode for display monitors, including using the alarm handler on dedicated monitor screens
 - [ ] Plugin system improvements and standardization
 - [ ] Resource management and memory optimization
 - [ ] Cross-platform compatibility challenges (Windows, Linux, macOS)
@@ -59,6 +60,7 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Identify flaky tests and common blind spots in current pipelines
 
 #### 1.5 UI/UX Framework Modernization
+- [ ] Quick discussion topic: identify which Phoebus applications should support kiosk mode, starting with the Display Builder runtime and alarm applications as the first candidates
 - [ ] CSS styling and theming improvements
 - [ ] Responsive design patterns for different screen sizes
 - [ ] Dark mode and accessibility enhancements
