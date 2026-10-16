@@ -265,6 +265,11 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
 - [ ] Unit testing and test coverage goals
 - [ ] Documentation standards
 - [ ] Java code conventions ([#894](https://github.com/ControlSystemStudio/phoebus/issues/894)) and IDE guidance (IntelliJ first; drop or de-emphasize Eclipse configuration)
+- [ ] AI-assisted development workflow and repository guardrails
+  - Define how AI is used in development: code generation, refactoring, test authoring, issue triage, and documentation support
+  - Establish repository-level guardrails using GitHub Copilot custom instructions and shared `AGENTS.md` conventions
+  - Review best practices from: [GitHub Copilot repository instructions](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions), [Temporal SDK Java AGENTS.md](https://github.com/temporalio/sdk-java/blob/-/AGENTS.md), [Agents.md](https://agents.md/), and the [DevAgentStack guide](https://devagentstack.com/guide/) with emphasis on steps 03 and 04
+  - Require scoped prompts, explicit task definition, and verification steps so AI-assisted changes stay auditable and reproducible
 
 #### 4.2 Release Management
 - [ ] Versioning strategy (semantic versioning)
