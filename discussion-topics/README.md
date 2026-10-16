@@ -249,6 +249,11 @@ Completed topics from earlier events are in the [archive](../archive/README.md).
   - Search period and excessive search logging ([#3705](https://github.com/ControlSystemStudio/phoebus/issues/3705), [#3654](https://github.com/ControlSystemStudio/phoebus/issues/3654))
   - CA/PVA array decoding differences ([#3536](https://github.com/ControlSystemStudio/phoebus/issues/3536), [#3791](https://github.com/ControlSystemStudio/phoebus/issues/3791)) and failures on missing fields ([#3248](https://github.com/ControlSystemStudio/phoebus/issues/3248))
   - Blocked TCP connections caused by IOC behavior: threading approach after the mitigation release
+- [ ] **VType metadata model cleanup**
+  - Consolidated finding from [epicsCoreJava issue #140](https://github.com/epics-base/epicsCoreJava/issues/140) and [PR #146](https://github.com/epics-base/epicsCoreJava/pull/146): description metadata should be modeled separately from `Display`, not forced into a full display payload for every value type
+  - The proposal is to separate `description` from `display` so types such as `VString`, `VEnum`, and `VBoolean` can carry a description without requiring a full display contract, while keeping compatibility with existing factories and clients
+  - The proposed pattern is a `DescriptionProvider` interface, with `DisplayProvider extends DescriptionProvider`, plus backward-compatible `of(...)` factory overloads that accept an optional description
+  - This is directly relevant to Phoebus UI work such as the PV Table and any display-layer metadata that needs a description without an entire display object
 
 #### 3.2 PV Access Layer
 - [ ] Name service interoperability and fallback behavior
