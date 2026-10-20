@@ -575,6 +575,20 @@ Update Olog's Elasticsearch mappings and templates to support vector embeddings 
 
 **Assigned To:** _Available_
 
+### SERVICES-OLOG-002: Role-based authorization 
+
+**Repository:** https://github.com/Olog/phoebus-olog  
+**Difficulty:** Intermediate  
+**Skills Required:** Java/Spring Boot
+
+**Description:**  
+Add role-based access to management end-points in order to be able to delegate responsibilities to create and update logbooks, tags, properties and templates. Similar to save&restore, an admin role should be a simple and good enough approach.
+
+**Resources:**
+- Olog repository: https://github.com/Olog/phoebus-olog
+
+**Assigned To:** _Available_
+
 ---
 
 ### SERVICES-CFNS-001: Multi-threaded ChannelFinder Nameserver with Broadcast Fallback
