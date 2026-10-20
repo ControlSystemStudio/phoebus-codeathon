@@ -36,7 +36,7 @@ This directory contains the list of development projects for the Phoebus tools a
 | [SERVICES-VERSIONING-001](#services-versioning-001-rest-api-versioning-strategy) | REST API Versioning Strategy | Intermediate | | Started |
 | [SERVICES-WEBSOCKET-001](#services-websocket-001-websocket-support-as-a-alternative-to-polling-phoebus-services) | WebSocket Support as Alternative to Polling | Intermediate | | Not Started |
 | [SERVICES-OLOG-001](#services-olog-001-elasticsearch-embeddings-index-mapping-and-template-update-for-olog) | Elasticsearch embeddings index mapping and template update for Olog | Intermediate | | Not Started |
-| [SERVICES-OLOG-002](#services-olog-002-role-base-authorization) | Role-based authorization for admin tasks | Intermediate | | Not Started |
+| [SERVICES-OLOG-002](#services-olog-002-role-based-authorization) | Role-based authorization for admin tasks | Intermediate | | Not Started |
 | [SERVICES-CFNS-001](#services-cfns-001-multi-threaded-channelfinder-nameserver-with-broadcast-fallback) | Multi-threaded ChannelFinder Nameserver with Broadcast Fallback | Intermediate | | Not Started |
 | [SERVICES-CF-DOC-001](#services-cf-doc-001-channel-lifecycle-documentation-and-diagram-for-the-channelfinder-ecosystem) | Channel lifecycle documentation and diagram for the ChannelFinder ecosystem | Beginner | | Not Started |
 | [SERVICES-RECSYNC-002](#services-recsync-002-restructure-recsync-repo-and-modernize-python-packaging) | Restructure recsync repo and modernize Python packaging | Beginner | | Not Started |
