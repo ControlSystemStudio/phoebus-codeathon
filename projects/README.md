@@ -731,7 +731,7 @@ Explore and implement a direct communication path between the EPICS IOC componen
 
 ### SERVICES-RECSYNC-005: RecCaster unicast mode
 
-**Repository:** https://github.com/ChannelFinder/recsync  
+**Repository:** https://github.com/ChannelFinder/reccaster  
 **Difficulty:** Intermediate  
 **Skills Required:** EPICS IOC Development, C/C++ or IOC Module Work, Network Configuration, Testing  
 
@@ -746,8 +746,8 @@ Add and validate a unicast mode for `reccaster` so sites can explicitly target o
 - Track the work against the related issue: https://github.com/ChannelFinder/recsync/issues/108
 
 **Resources:**
-- recsync repository: https://github.com/ChannelFinder/recsync
-- recsync issue: https://github.com/ChannelFinder/recsync/issues/108
+- reccaster repository: https://github.com/ChannelFinder/reccaster
+- reccaster issue: https://github.com/ChannelFinder/reccaster/issues/24
 
 **Assigned To:** _Available_
 
