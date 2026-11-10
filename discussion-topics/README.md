@@ -5,7 +5,7 @@ This document outlines the technical discussion topics for the Phoebus Tools and
 
 ---
 
-Completed topics from earlier events are in the [archive](../archive/README.md).
+Completed topics from earlier events are in [past-codeathons](../past-codeathons/README.md).
 
 ---
 

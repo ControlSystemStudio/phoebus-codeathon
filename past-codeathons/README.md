@@ -1,6 +1,6 @@
-# Archive
+# Past Codeathons
 
-Completed topics and tasks, one document per event. Active lists stay in
+Results of each event: completed topics and tasks, meeting minutes and other outputs, one folder per event. Active lists stay in
 [discussion-topics](../discussion-topics/README.md), [documentation-tasks](../documentation-tasks/README.md)
 and [projects](../projects/README.md).
 
