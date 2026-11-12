@@ -4,7 +4,7 @@
 
 - Event: 2026 EPICS Developers Meeting and Codeathon hosted by EIC at BNL, Oct 19-23, 2026
 - Event wiki: [2026 EPICS Developers Meeting and Codeathon](https://github.com/epics-base/epics-base/wiki/2026-EPICS-Developers-Meeting-and-Codeathon-hosted-by-EIC)
-- Results: [Meeting minutes](minutes.md) (draft, in progress)
+- Results: [Meeting minutes](minutes.md) (draft, in progress) and a [summary of decisions and actions](summary.md)
 
 ## Completed Topics
 

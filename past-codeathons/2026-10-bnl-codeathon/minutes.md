@@ -2,7 +2,7 @@
 
 Minutes of the 2026 EPICS Developers Meeting and Codeathon, BNL, Oct 19 to 23, 2026. They were compiled from the automatic transcripts of the Zoom recordings and from notes taken in the room on Oct 20. Times are local (US Eastern) and approximate. Names that were unclear in the recording are marked as uncertain.
 
-**Status:** draft, under review. Covers Oct 20 to 22. Friday Oct 23 was not recorded. A cross-topic summary of actions and decisions is pending.
+**Status:** draft, under review. Covers Oct 20 to 22. Friday Oct 23 was not recorded. Decisions, actions and open items are summarized in [summary.md](summary.md).
 
 ## When things were discussed
 
@@ -179,6 +179,11 @@ Michael Davidsaver's response was that the timestamp user tag was designed for e
 - **Murali Shankar:** implement storage of the timestamp user tag in the archiver. Others are welcome to work on the open issue.
 - **Volunteer needed:** batch processing for `archivePV` and other BPLs.
 
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- [epicsarchiverap#559](https://github.com/archiver-appliance/epicsarchiverap/pull/559) "Add support for PVAccess userTags." (slacmshankar, opened 22 Oct, open).
+- [epicsarchiverap#563](https://github.com/archiver-appliance/epicsarchiverap/pull/563) "Lttb postprocessor for scalar pvs" (caraxlr, opened 23 Oct, open). See Topic 15.
+
 #### Linked passages
 - LTTB as an archiver retrieval post-processor: Topic 15 (afternoon working session, 14:33 to 14:39).
 
@@ -263,6 +268,13 @@ CEA's web alarm application, developed by Loic Caouen, is almost finished. It pr
 - **Ralph Lange (ITER), asked to lead:** write a rough document of PVWS security concerns and requirements this week.
 - **Person not identified:** share the older DBWR vs cs-web-lib comparison from April.
 - **Loic Caouen (CEA):** get permission to publish the alarm-web code.
+
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- [pvws#11](https://github.com/ControlSystemStudio/pvws/pull/11) "Spring4" (shroffk) was merged on 22 Oct: Spring Boot 4 and Java 25.
+- [pvws#12](https://github.com/ControlSystemStudio/pvws/pull/12) "Aligning with minor changes in the 'legacy' pvws code base" (georgweiss) was merged on 5 Nov. This brings the Spring Boot version in line with the ORNL fork.
+- [pvws#13](https://github.com/ControlSystemStudio/pvws/pull/13) "Docker stuff updated for Java 25" (georgweiss) was merged on 2 Nov. A Dockerfile already existed ([pvws#6](https://github.com/ControlSystemStudio/pvws/pull/6), 2025).
+- [pvws#14](https://github.com/ControlSystemStudio/pvws/pull/14) "Allow cors requests" (georgweiss, open). See Topic 17.
 
 #### Open questions
 - Is the new display library DLS mentioned Weiss (weiss-controls/weiss)? Awaiting link from DLS.
@@ -478,6 +490,15 @@ The session took six sub-topics in turn: Kafka resilience, configuration managem
 - **Several facilities (not named):** use alarm-logger data to help build tools for improving alarm configurations.
 - **Ralph Lange (ITER):** find out whether the alarm handler can support ITER's hierarchical filtering.
 - **Kunal Shroff:** open a GitHub discussion collecting alarm security expectations (who can acknowledge, disable or change configuration), with links to related discussions.
+
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- [#3920](https://github.com/ControlSystemStudio/phoebus/issues/3920) "Interactive alarm editing proposal" was closed as not planned on 28 Oct. The work continues as a series of open PRs by LordIdra (ISIS):
+  - [#3991](https://github.com/ControlSystemStudio/phoebus/pull/3991) "Add editing mode to alarm tree";
+  - [#4007](https://github.com/ControlSystemStudio/phoebus/pull/4007) "Move alarm config menu out of dialog box and into 'properties' panel";
+  - [#4013](https://github.com/ControlSystemStudio/phoebus/pull/4013) "Overhaul disable alarms dialog", [#4010](https://github.com/ControlSystemStudio/phoebus/pull/4010) "Enabling filter UI improvements", [#3988](https://github.com/ControlSystemStudio/phoebus/pull/3988) "Alarm tree search" and [#4018](https://github.com/ControlSystemStudio/phoebus/pull/4018) "Alarm tree filter".
+- [#3985](https://github.com/ControlSystemStudio/phoebus/pull/3985) "Switching to 4.3.1 for the Kafka client libs" (georgweiss) was merged on 26 Oct.
+- [#3977](https://github.com/ControlSystemStudio/phoebus/pull/3977) "docker: update kafka and remove zookeeper" (roycpro) was merged on 22 Oct.
 
 #### Open questions
 - How should acknowledgements and configuration changes be authorized: an alarm server API, Kafka access controls, or something else?
@@ -854,6 +875,12 @@ Thu 22 Oct 2026, 09:33 to 10:23. Agenda: ChannelFinder / RecSync. Kunal Shroff p
 - **Volunteer, name not captured:** document the ChannelFinder ecosystem, info tags and allow-list. Kunal asked "Who's volunteering for that? Thank you."
 - **Unassigned:** document that QSRV2 sets both environment variables, and the PVXS release that fixed the port number.
 - **Unassigned:** set an initial RecSync version and align the other components with it.
+
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- [reccaster#24](https://github.com/ChannelFinder/reccaster/issues/24) "RecCaster unicast mode" (tynanford, open).
+- [recceiver#7](https://github.com/ChannelFinder/recceiver/pull/7) "update startup/shutdown cleanup" (roycpro) was merged on 2 Nov.
+- [recceiver#8](https://github.com/ChannelFinder/recceiver/pull/8) "Spring4" (shroffk, opened 28 Oct, open).
 
 #### Open questions
 - What performance targets should the Java RecCeiver aim for?
@@ -1348,6 +1375,11 @@ Adding authentication to PVWS was suggested as a step-by-step effort (a to-do, w
 - **Seth Nemesure and Kunal Shroff:** test the migration tool for moving from other logbooks such as e-log. Ankit to verify it still works.
 - **Unassigned:** implement LTTB as an archiver retrieval post-processor for scalars.
 
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- PVWS: [pvws#11](https://github.com/ControlSystemStudio/pvws/pull/11) (Spring Boot 4 and Java 25, shroffk) was merged on 22 Oct, and [pvws#13](https://github.com/ControlSystemStudio/pvws/pull/13) (Docker for Java 25, georgweiss) on 2 Nov.
+- LTTB: [epicsarchiverap#563](https://github.com/archiver-appliance/epicsarchiverap/pull/563) "Lttb postprocessor for scalar pvs" (caraxlr, open).
+
 #### Open questions
 - Should LTTB also be applied to each individual waveform in a bin?
 - Who announces the Spring Boot PVWS as the maintained version?
@@ -1453,6 +1485,13 @@ Kunal confirmed that no more discussion was planned for the day and that the aft
 - Clean up the Docker files and provide compose files for the full stack and for the alarm services. Related: DEPLOY projects.
 - Health checks and notifications for the alarm server.
 
+#### Follow-up after the codeathon
+Status checked on 12 Nov 2026.
+- Kafka client: [phoebus#3985](https://github.com/ControlSystemStudio/phoebus/pull/3985) "Switching to 4.3.1 for the Kafka client libs" (georgweiss) was merged on 26 Oct.
+- Translations: [phoebus#3982](https://github.com/ControlSystemStudio/phoebus/pull/3982) "Phoebus is not fully translated" (lcaouen) was merged on 24 Oct.
+- PVWS: Kay's changes ([pvws#12](https://github.com/ControlSystemStudio/pvws/pull/12), merged 5 Nov) and the Spring Boot 4 / JDK 25 upgrade ([pvws#11](https://github.com/ControlSystemStudio/pvws/pull/11), merged 22 Oct) are both in.
+- Oracle timestamps: [phoebus#3905](https://github.com/ControlSystemStudio/phoebus/pull/3905) is still open.
+
 #### Open questions
 - Which facility is considering the ScanEngine?
 
@@ -1501,7 +1540,7 @@ Two design discussions from this session are separate topics:
 - **Tynan Ford:** pull requests for the Docker setup and for CORS.
 
 **Follow-up**
-- [pvws#14](https://github.com/ControlSystemStudio/pvws/pull/14) "Allow cors requests" (open).
+- [pvws#14](https://github.com/ControlSystemStudio/pvws/pull/14) "Allow cors requests" (open). The PR was opened by georgweiss on 2 Nov.
 
 #### 17.3 Alarm client "disconnected" indicator
 
@@ -1536,7 +1575,7 @@ Two design discussions from this session are separate topics:
 - **Plan for the rest of the day.** Pull requests and code until lunch, then save-and-restore and the JDK upgrade after lunch.
 
 #### Commitments / actions
-- **Tynan Ford:** Docker and CORS pull requests for PVWS ([pvws#14](https://github.com/ControlSystemStudio/pvws/pull/14)).
+- **Tynan Ford:** Docker and CORS pull requests for PVWS. CORS is now in [pvws#14](https://github.com/ControlSystemStudio/pvws/pull/14), opened by georgweiss.
 - **Volunteer, name not captured:** RecCeiver JDK 25 upgrade.
 - **Assignee, name not captured:** Oracle timestamp issue.
 - **Loic Caouen (issue reporter), investigator unassigned:** investigate the ghost alarm configuration; see #3978.
@@ -1584,7 +1623,7 @@ Thu 22 Oct 2026, 14:33 to 14:52 and 15:30 to 16:54. This was working time with s
 - Change the default ports to a sequential scheme through pull requests. Other facilities can comment on the PRs.
 
 **Follow-up**
-- [ChannelFinderService#238](https://github.com/ChannelFinder/ChannelFinderService/pull/238) "Change default port in application.properties" (lcaouen, open).
+- Sequential default ports, all opened by lcaouen and still open on 12 Nov 2026: [ChannelFinderService#238](https://github.com/ChannelFinder/ChannelFinderService/pull/238), [phoebus#4006](https://github.com/ControlSystemStudio/phoebus/pull/4006), [phoebus-olog#277](https://github.com/Olog/phoebus-olog/pull/277) and [pvws#15](https://github.com/ControlSystemStudio/pvws/pull/15).
 
 #### 18.3 Audio annunciator race condition (#3966)
 
