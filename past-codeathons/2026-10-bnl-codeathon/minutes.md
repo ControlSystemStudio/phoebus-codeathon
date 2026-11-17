@@ -2,44 +2,44 @@
 
 Minutes of the 2026 EPICS Developers Meeting and Codeathon, BNL, Oct 19 to 23, 2026. They were compiled from the automatic transcripts of the Zoom recordings and from notes taken in the room on Oct 20. Times are local (US Eastern) and approximate. Names that were unclear in the recording are marked as uncertain.
 
-**Status:** draft, under review. Covers Oct 20 to 22. Friday Oct 23 was not recorded. Decisions, actions and open items are summarized in [summary.md](summary.md).
+**Status:** draft, under review. Covers Oct 20 to 22. Friday Oct 23 was not recorded. A briefing and the decisions, actions and open items are in the [summary](summary.md).
 
 ## When things were discussed
 
 | Day | Scheduled discussion sessions | Discussions and notes from working time |
 |---|---|---|
-| Tue 20 Oct | 1 Archiver Appliance; 2 Web toolkits and PVWS | 15 Afternoon session |
-| Wed 21 Oct | 3 Alarm services; 4 Screen auto-generation (coffee-break discussion); 5 Agentic frameworks; 6 Olog | 9 Tabs widget; 10 Alarm-sensitive widgets; 16 Afternoon session |
-| Thu 22 Oct | 7 RecSync and ChannelFinder; 8 Save-and-restore | 11 Text truncation; 12 Missing `-settings` file; 13 Gateways; 14 VType description; 17 Morning session; 18 Afternoon session and wrap-up |
+| Tue 20 Oct | [1](#topic-1) Archiver Appliance; [2](#topic-2) Web toolkits and PVWS | [15](#topic-15) Afternoon session |
+| Wed 21 Oct | [3](#topic-3) Alarm services; [4](#topic-4) Screen auto-generation (coffee-break discussion); [5](#topic-5) Agentic frameworks; [6](#topic-6) Olog | [9](#topic-9) Tabs widget; [10](#topic-10) Alarm-sensitive widgets; [16](#topic-16) Afternoon session |
+| Thu 22 Oct | [7](#topic-7) RecSync and ChannelFinder; [8](#topic-8) Save-and-restore | [11](#topic-11) Text truncation; [12](#topic-12) Missing `-settings` file; [13](#topic-13) Gateways; [14](#topic-14) VType description; [17](#topic-17) Morning session; [18](#topic-18) Afternoon session and wrap-up |
 
 ## Contents
 
-- [Part 1: Discussion topics](#part-1-discussion-topics)
-  - [Topic 1: Archiver Appliance](#topic-1-archiver-appliance)
-  - [Topic 2: Web toolkits, PVWS, DBWR, PVInfo, and web security](#topic-2-web-toolkits-pvws-dbwr-pvinfo-and-web-security)
-  - [Topic 3: Alarm services](#topic-3-alarm-services)
-  - [Topic 4: Auto-generating engineering screens (side discussion)](#topic-4-auto-generating-engineering-screens-side-discussion)
-  - [Topic 5: Agentic frameworks (Osprey) and the middle-layer services](#topic-5-agentic-frameworks-osprey-and-the-middle-layer-services)
-  - [Topic 6: Olog: AI search, Python client and the legacy Olog](#topic-6-olog-ai-search-python-client-and-the-legacy-olog)
-  - [Topic 7: RecSync, RecCeiver, RecCaster and the ChannelFinder ecosystem](#topic-7-recsync-recceiver-reccaster-and-the-channelfinder-ecosystem)
-  - [Topic 8: Save-and-restore: facility workflows, UI, client vs service restore, restore ordering and deadlocks](#topic-8-save-and-restore-facility-workflows-ui-client-vs-service-restore-restore-ordering-and-deadlocks)
-  - [Topic 9: Display Builder Tabs widget: Active Tab vs Default Tab](#topic-9-display-builder-tabs-widget-active-tab-vs-default-tab)
-  - [Topic 10: Alarm-sensitive widgets and alarm colors](#topic-10-alarm-sensitive-widgets-and-alarm-colors)
-  - [Topic 11: Showing truncated values in Text Entry and Text Update (PR #3928)](#topic-11-showing-truncated-values-in-text-entry-and-text-update-pr-3928)
-  - [Topic 12: Phoebus launch when the `-settings` file is missing](#topic-12-phoebus-launch-when-the--settings-file-is-missing)
-  - [Topic 13: Gateways: PVA gateway, a new CA gateway, and CA/PVA bridging](#topic-13-gateways-pva-gateway-a-new-ca-gateway-and-capva-bridging)
-  - [Topic 14: VTypes: separating "description" from "display" (epicsCoreJava DescriptionProvider)](#topic-14-vtypes-separating-description-from-display-epicscorejava-descriptionprovider)
-- [Part 2: Codeathon working-session notes](#part-2-codeathon-working-session-notes)
-  - [Topic 15: Afternoon working session (Oct 20)](#topic-15-afternoon-working-session-oct-20)
-  - [Topic 16: Afternoon working session (Oct 21)](#topic-16-afternoon-working-session-oct-21)
-  - [Topic 17: Morning working session (Oct 22)](#topic-17-morning-working-session-oct-22)
-  - [Topic 18: Afternoon working session and wrap-up (Oct 22)](#topic-18-afternoon-working-session-and-wrap-up-oct-22)
+- [Part 1: Discussion topics](#part-1)
+  - [Topic 1: Archiver Appliance](#topic-1)
+  - [Topic 2: Web toolkits, PVWS, DBWR, PVInfo, and web security](#topic-2)
+  - [Topic 3: Alarm services](#topic-3)
+  - [Topic 4: Auto-generating engineering screens (side discussion)](#topic-4)
+  - [Topic 5: Agentic frameworks (Osprey) and the middle-layer services](#topic-5)
+  - [Topic 6: Olog: AI search, Python client and the legacy Olog](#topic-6)
+  - [Topic 7: RecSync, RecCeiver, RecCaster and the ChannelFinder ecosystem](#topic-7)
+  - [Topic 8: Save-and-restore: facility workflows, UI, client vs service restore, restore ordering and deadlocks](#topic-8)
+  - [Topic 9: Display Builder Tabs widget: Active Tab vs Default Tab](#topic-9)
+  - [Topic 10: Alarm-sensitive widgets and alarm colors](#topic-10)
+  - [Topic 11: Showing truncated values in Text Entry and Text Update (PR #3928)](#topic-11)
+  - [Topic 12: Phoebus launch when the `-settings` file is missing](#topic-12)
+  - [Topic 13: Gateways: PVA gateway, a new CA gateway, and CA/PVA bridging](#topic-13)
+  - [Topic 14: VTypes: separating "description" from "display" (epicsCoreJava DescriptionProvider)](#topic-14)
+- [Part 2: Codeathon working-session notes](#part-2)
+  - [Topic 15: Afternoon working session (Oct 20)](#topic-15)
+  - [Topic 16: Afternoon working session (Oct 21)](#topic-16)
+  - [Topic 17: Morning working session (Oct 22)](#topic-17)
+  - [Topic 18: Afternoon working session and wrap-up (Oct 22)](#topic-18)
 
-## Part 1: Discussion topics
+## <a id="part-1"></a>Part 1: Discussion topics
 
 Discussions of the services, areas and design decisions covered at the codeathon. Topics 1 to 8 were scheduled sessions from the [agenda](../../discussion-topics/README.md). Topics 9 to 14 came up during working time, usually because a pull request, issue or design question needed a decision from the group.
 
-### Topic 1: Archiver Appliance
+### <a id="topic-1"></a>Topic 1: Archiver Appliance
 
 Tue 20 Oct 2026, morning session ending at 10:52. Agenda 2.3 Archiver Service, and 6.2 AI/ML for the AI-readiness part. The session had three parts:
 - 1.1 Roadmap, deployment and waveform data
@@ -187,7 +187,7 @@ Status checked on 12 Nov 2026.
 #### Linked passages
 - LTTB as an archiver retrieval post-processor: Topic 15 (afternoon working session, 14:33 to 14:39).
 
-### Topic 2: Web toolkits, PVWS, DBWR, PVInfo, and web security
+### <a id="topic-2"></a>Topic 2: Web toolkits, PVWS, DBWR, PVInfo, and web security
 
 Tue 20 Oct 2026, 11:32 to 12:20. Agenda 6.2 (web vs native), 5.1 (access control for web clients), 2.1 (Tomcat and Spring Boot alignment), and 3.1 (DBWR and PVWS ownership after Kay).
 
@@ -285,7 +285,7 @@ Status checked on 12 Nov 2026.
 - The legacy CS-Studio Olog plugin and the PVWS follow-up work after lunch: Topic 15.
 - Alarm REST API and the alarm architecture: related to the alarm discussion (agenda 2.6) and ALARM-REST-001.
 
-### Topic 3: Alarm services
+### <a id="topic-3"></a>Topic 3: Alarm services
 
 Wed 21 Oct 2026, 09:10 to 10:31 and 10:54 to 10:56. Agenda 2.6 Alarm Services. Chaired by Kunal Shroff. The Olog session that was also planned for this morning was postponed, and after the break the meeting moved straight on to agentic frameworks. A side conversation during the break about auto-generating engineering screens is recorded separately as Topic 4.
 
@@ -512,7 +512,7 @@ Status checked on 12 Nov 2026.
 - Kafka topic-creation code cleanup was deferred to the afternoon.
 - Screen auto-generation side conversation during the break: Topic 4.
 
-### Topic 4: Auto-generating engineering screens (side discussion)
+### <a id="topic-4"></a>Topic 4: Auto-generating engineering screens (side discussion)
 
 Wed 21 Oct 2026, 10:32 to 10:45. This was an informal conversation during the coffee break, not an agenda session. It relates to agenda 1.6 (Display Builder) and 6.2 (future features). The participants included NSLS-II beamline staff and Michael Davidsaver. Individual speakers are not always identifiable, and parts of the recording are fragmentary.
 
@@ -574,7 +574,7 @@ Wed 21 Oct 2026, 10:32 to 10:45. This was an informal conversation during the co
 #### Linked passages
 - Display Builder topics later in the codeathon, if any.
 
-### Topic 5: Agentic frameworks (Osprey) and the middle-layer services
+### <a id="topic-5"></a>Topic 5: Agentic frameworks (Osprey) and the middle-layer services
 
 Wed 21 Oct 2026, 11:03 to 11:33. Agenda 6.2 (AI/ML). Kunal Shroff chaired, and Lucy (BNL) gave an overview of Osprey.
 
@@ -672,7 +672,7 @@ Wed 21 Oct 2026, 11:03 to 11:33. Agenda 6.2 (AI/ML). Kunal Shroff chaired, and L
 - Olog AI search: Topic 6.
 - Alarm-log analytics: Topic 3.
 
-### Topic 6: Olog: AI search, Python client and the legacy Olog
+### <a id="topic-6"></a>Topic 6: Olog: AI search, Python client and the legacy Olog
 
 Wed 21 Oct 2026, 11:33 to 12:07. Agenda 2.4 (Olog Integration) and 6.2. Kunal Shroff chaired; the session was moved from earlier in the morning. Lunch followed.
 
@@ -756,7 +756,7 @@ Wed 21 Oct 2026, 11:33 to 12:07. Agenda 2.4 (Olog Integration) and 6.2. Kunal Sh
 - Olog data migration tool: Topic 15.
 - Osprey logbook integration (ARIEL) and MCP: Topic 5.
 
-### Topic 7: RecSync, RecCeiver, RecCaster and the ChannelFinder ecosystem
+### <a id="topic-7"></a>Topic 7: RecSync, RecCeiver, RecCaster and the ChannelFinder ecosystem
 
 Thu 22 Oct 2026, 09:33 to 10:23. Agenda: ChannelFinder / RecSync. Kunal Shroff presented and chaired. Michael Davidsaver, the original author of RecSync, Ralph Lange (ITER), Tynan Ford and Murali Shankar contributed. The recording starts in the middle of the introduction.
 
@@ -893,7 +893,7 @@ Status checked on 12 Nov 2026.
 - PVInfo: Topic 2.
 - Gateways: Topic 13.
 
-### Topic 8: Save-and-restore: facility workflows, UI, client vs service restore, restore ordering and deadlocks
+### <a id="topic-8"></a>Topic 8: Save-and-restore: facility workflows, UI, client vs service restore, restore ordering and deadlocks
 
 Thu 22 Oct 2026, 13:37 to 15:04. Agenda: Save-and-restore ("collect usage workflows from facilities"; restore from client vs service). Kunal Shroff chaired. Georg (ESS, maintainer) and Jure Varlec (Cosylab) led much of it. Others came from ISIS/UK, CEA and EIC.
 
@@ -1039,7 +1039,7 @@ Thu 22 Oct 2026, 13:37 to 15:04. Agenda: Save-and-restore ("collect usage workfl
 - JCA vs Jackie: Topic 7.
 - The deadlock discussion continued informally at about 16:40, including a problem with the Jackie/PVA wrapper.
 
-### Topic 9: Display Builder Tabs widget: Active Tab vs Default Tab
+### <a id="topic-9"></a>Topic 9: Display Builder Tabs widget: Active Tab vs Default Tab
 
 Wed 21 Oct 2026, 14:08 to 14:12. Agenda: Display Builder. This was a short design review during the afternoon working session (Topic 16); Kunal Shroff asked for a "UI philosophical discussion".
 
@@ -1065,7 +1065,7 @@ Wed 21 Oct 2026, 14:08 to 14:12. Agenda: Display Builder. This was a short desig
 #### Linked passages
 - Afternoon working session: Topic 16.
 
-### Topic 10: Alarm-sensitive widgets and alarm colors
+### <a id="topic-10"></a>Topic 10: Alarm-sensitive widgets and alarm colors
 
 Wed 21 Oct 2026, 14:31 to 14:50 and 16:22. Agenda: Display Builder and alarm visualization. This discussion and poll took place during the afternoon working session (Topic 16). Kunal Shroff chaired.
 
@@ -1120,7 +1120,7 @@ Wed 21 Oct 2026, 14:31 to 14:50 and 16:22. Agenda: Display Builder and alarm vis
 - Alarm services: Topic 3.
 - Auto-generating screens: Topic 4.
 
-### Topic 11: Showing truncated values in Text Entry and Text Update (PR #3928)
+### <a id="topic-11"></a>Topic 11: Showing truncated values in Text Entry and Text Update (PR #3928)
 
 Thu 22 Oct 2026, 11:25 to 11:29 and 12:04 to 12:15. Design review of [phoebus#3928](https://github.com/ControlSystemStudio/phoebus/pull/3928) "Feat: truncate overflowing content of TextEntry and TextUpdate, append ellipsis" (gabriel-desmarchelier, CEA). Kunal Shroff led the review. Participants from CEA demonstrated the PR.
 
@@ -1167,7 +1167,7 @@ Thu 22 Oct 2026, 11:25 to 11:29 and 12:04 to 12:15. Design review of [phoebus#39
 #### Linked passages
 - None.
 
-### Topic 12: Phoebus launch when the `-settings` file is missing
+### <a id="topic-12"></a>Topic 12: Phoebus launch when the `-settings` file is missing
 
 Thu 22 Oct 2026, 12:15 to 12:21, revisited at 13:36. Kunal Shroff chaired. The request came from ISIS, in [phoebus#3960](https://github.com/ControlSystemStudio/phoebus/issues/3960) "Start and log error (rather than refusing to start) if -settings flag points to nonexistent file" (LordIdra).
 
@@ -1199,7 +1199,7 @@ Thu 22 Oct 2026, 12:15 to 12:21, revisited at 13:36. Kunal Shroff chaired. The r
 #### Open questions
 - Was the third site that relies on the failure ITER? The name was unclear in the recording.
 
-### Topic 13: Gateways: PVA gateway, a new CA gateway, and CA/PVA bridging
+### <a id="topic-13"></a>Topic 13: Gateways: PVA gateway, a new CA gateway, and CA/PVA bridging
 
 Thu 22 Oct 2026, 16:08 to 16:22, plus an informal thread at 16:37 to 16:39. Kunal Shroff raised the topic and asked the EPICS core developers in the next room to join. The main speaker is Ralph Lange (ITER), developer of a new CA gateway.
 
@@ -1260,7 +1260,7 @@ Thu 22 Oct 2026, 16:08 to 16:22, plus an informal thread at 16:37 to 16:39. Kuna
 #### Linked passages
 - Gateways and the CF name server: Topic 7.
 
-### Topic 14: VTypes: separating "description" from "display" (epicsCoreJava DescriptionProvider)
+### <a id="topic-14"></a>Topic 14: VTypes: separating "description" from "display" (epicsCoreJava DescriptionProvider)
 
 Thu 22 Oct 2026, 14:51 to 14:52 and 16:22 to 16:33, plus a brief return at 16:49. Kunal Shroff led. Georg (ESS) and EPICS core developers joined, including the speaker from Topic 13. The proposal is Abraham Wolk's (ESS): [epicsCoreJava#146](https://github.com/epics-base/epicsCoreJava/pull/146) "Add interface `DescriptionProvider`" (open). It builds on [epicsCoreJava#140](https://github.com/epics-base/epicsCoreJava/issues/140) "How to incorporate descriptions in VTypes".
 
@@ -1300,11 +1300,11 @@ Thu 22 Oct 2026, 14:51 to 14:52 and 16:22 to 16:33, plus a brief return at 16:49
 #### Linked passages
 - DBWR and the web runtimes: Topic 2.
 
-## Part 2: Codeathon working-session notes
+## <a id="part-2"></a>Part 2: Codeathon working-session notes
 
 Notes from hands-on project time: project check-ins, pull-request triage, quick questions to the room, smaller agreements and logistics.
 
-### Topic 15: Afternoon working session (Oct 20)
+### <a id="topic-15"></a>Topic 15: Afternoon working session (Oct 20)
 
 Tue 20 Oct 2026, 12:21 to 14:40. No formal agenda item; this is hands-on codeathon work with short coordination discussions.
 
@@ -1389,7 +1389,7 @@ Status checked on 12 Nov 2026.
 - LTTB and waveform reduction: Topic 1.1 (waveform best practices).
 - Legacy Olog sunset: Topic 6.
 
-### Topic 16: Afternoon working session (Oct 21)
+### <a id="topic-16"></a>Topic 16: Afternoon working session (Oct 21)
 
 Wed 21 Oct 2026, 13:05 to 16:28. This was project time with short group discussions. Two design discussions from this session are written up separately as Topic 9 (Tabs widget) and Topic 10 (alarm-sensitive widgets). Kunal Shroff chaired.
 
@@ -1501,7 +1501,7 @@ Status checked on 12 Nov 2026.
 - Archiver Appliance roadmap: Topic 1.
 - Tabs widget: Topic 9. Alarm-sensitive widgets and colors: Topic 10.
 
-### Topic 17: Morning working session (Oct 22)
+### <a id="topic-17"></a>Topic 17: Morning working session (Oct 22)
 
 Thu 22 Oct 2026, 10:23 to 12:04. This was hands-on working time, with short discussions in between. Several conversations ran in parallel, so only the identifiable threads are recorded here.
 
@@ -1588,7 +1588,7 @@ Two design discussions from this session are separate topics:
 - Oracle timestamp issue: Topic 16.
 - Alarm services: Topic 3.
 
-### Topic 18: Afternoon working session and wrap-up (Oct 22)
+### <a id="topic-18"></a>Topic 18: Afternoon working session and wrap-up (Oct 22)
 
 Thu 22 Oct 2026, 14:33 to 14:52 and 15:30 to 16:54. This was working time with short discussions in between. The gateway and VType-description discussions from this period are Topics 13 and 14.
 
