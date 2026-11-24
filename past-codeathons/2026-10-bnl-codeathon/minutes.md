@@ -825,7 +825,7 @@ Thu 22 Oct 2026, 09:33 to 10:23. Agenda: ChannelFinder / RecSync. Kunal Shroff p
 - Now that RecCeiver and RecCaster are separate, they will have separate versions. The contract between them is the protocol.
 - **Agreed:** derive versions from the RecSync protocol version. The major version is the protocol version, and the minor version is specific to each implementation.
   - The protocol header already has a version field: the first byte must be 0, and clients reject anything else.
-  - In about 15 years no protocol version change has been needed. The protocol does not support IPv6.
+  - In about 5 years no protocol version change has been needed. The protocol does not support IPv6.
 - PVA structures do not matter to ChannelFinder. Name resolution works on PV names only, with the same semantics as CA.
 
 **Gateways (raised by Ralph Lange).**
@@ -836,7 +836,7 @@ Thu 22 Oct 2026, 09:33 to 10:23. Agenda: ChannelFinder / RecSync. Kunal Shroff p
 - The Java RecCeiver (JDK 25, virtual threads) handled 2 million PVs and is a drop-in replacement for the Python one.
 - RecSync performance depends on ChannelFinder's batch and update endpoints, not on the language.
 - RecSync gives near-immediate notice when an IOC goes away, even with no clients connected.
-- The RecSync protocol has been stable for about 15 years and already carries a version byte.
+- The RecSync protocol has been stable for about 5 years and already carries a version byte.
 - QSRV2 sets both environment variables, so the CF name server needs no change.
 
 #### Best practices highlighted
